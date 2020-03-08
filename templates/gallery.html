@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block block_navbar %}  
+    <ul class="nav-menu">
+        <li class="menu-item-has-children"> <a href="{% url 'IndexView' %}" class="home">Home</a></li>
+        <li class="menu-item-has-children current-menu-item current_page_item"> <a href="#">About Us</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'AboutView' %}">About Us</a></li>
+                <li><a href="{% url 'TeachersView' %}">Teachers</a></li>
+                <li> <a href="#">Gallery</a> </li> 
+            </ul>
+        </li>
+        <li class="menu-item-has-children"> <a href="{% url 'CoursesView' %}">Courses</a></li>
+        <li class="menu-item-has-children"> <a href="{% url 'NotesView' %}">Notes</a></li>
+        <li class="menu-item-has-children"> <a href="{% url 'BlogView' %}">Blog</a></li>
+        <li class="menu-item-has-children"> <a href="{% url 'ContactView' %}">Contact</a></li>
+    </ul>
+{% endblock block_navbar %}
+{% block block_pagename %}
+    Gallery
+{% endblock block_pagename %}
+{% block block_body %}
+    <div class="rs-gallery sec-spacer">
+        <div class="container">
+            <div class="sec-title-2 mb-50 text-center">
+                <h2>GALLERY</h2>      
+                <p>Considering primary motivation for the generation of narratives is a useful concept</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="{% static "images/gallery/1.jpg" %}" alt="Gallery Image" />
+                        <div class="gallery-desc">
+                            <h3><a href="#">University Public Library</a></h3>
+                            <p>The students of the department study <br>tour each year different</p>
+                            <a class="image-popup" href="images/gallery/1.jpg" title="University Public Library">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="{% static "images/gallery/2.jpg" %}" alt="Gallery Image" />
+                        <div class="gallery-desc">
+                            <h3><a href="#">Campus Seminar 2018</a></h3>
+                            <p>The students of the department study <br>tour each year different</p>
+                            <a class="image-popup" href="images/gallery/2.jpg" title="Campus Seminar 2018">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="{% static "images/gallery/3.jpg" %}" alt="Gallery Image" />
+                        <div class="gallery-desc">
+                            <h3><a href="#">Annual Championship Program</a></h3>
+                            <p>The students of the department study <br>tour each year different</p>
+                            <a class="image-popup" href="images/gallery/3.jpg" title="Annual Championship Program">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="{% static "images/gallery/4.jpg" %}" alt="Gallery Image" />
+                        <div class="gallery-desc">
+                            <h3><a href="#">University Practical Lab</a></h3>
+                            <p>The students of the department study <br>tour each year different</p>
+                            <a class="image-popup" href="images/gallery/4.jpg" title="University Practical Lab">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="{% static "images/gallery/5.jpg" %}" alt="Gallery Image" />
+                        <div class="gallery-desc">
+                            <h3><a href="#">Modern Library For Student</a></h3>
+                            <p>The students of the department study <br>tour each year different</p>
+                            <a class="image-popup" href="images/gallery/5.jpg" title="University Tour 2018">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="{% static "images/gallery/6.jpg" %}" alt="Gallery Image" />
+                        <div class="gallery-desc">
+                            <h3><a href="#">Inner View Library</a></h3>
+                            <p>The students of the department study <br>tour each year different</p>
+                            <a class="image-popup" href="images/gallery/6.jpg" title="Inner View Library">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock block_body %}
