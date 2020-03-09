@@ -6,5 +6,9 @@ class Note(models.Model):
     subject = models.CharField(max_length=25)
     chapter = models.CharField(max_length=25)
     notes_document = models.FileField(upload_to='documents/')
+    language = models.CharField(max_length=25)
     description = models.CharField(max_length=255, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+    	return self.note_class + ' | ' + self.subject + ' | ' + self.chapter + ' | ' + self.language

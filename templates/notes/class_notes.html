@@ -35,7 +35,7 @@
                             <div class="course-img">
                                 <img src="{% static "images/courses/10.jpg" %}" alt="" />
                                 <div class="course-toolbar">
-                                    <h4 class="course-category"><a href="#">{{i.subject}}</a></h4>
+                                    <h4 class="course-category"><a href="#">Class {{i.note_class}} | {{i.subject}}</a></h4>
                                     <div class="course-date">
                                         <i class="fa fa-file-pdf-o"></i> PDF
                                     </div>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="course-body">
                                 <div class="course-desc">
-                                    <h4 class="course-title"><a href="courses-details.html">Class {{i.note_class}}</a></h4>
+                                    <h4 class="course-title"><a href="courses-details.html">[{{i.language}}]{{i.chapter}}</a></h4>
                                     <p>
                                         {{i.description}}
                                     </p>
