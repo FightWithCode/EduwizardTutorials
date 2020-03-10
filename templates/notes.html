@@ -13,7 +13,7 @@
         <li class="menu-item-has-children"> <a href="{% url 'CoursesView' %}">Courses</a></li>
         <li class="menu-item-has-children current-menu-item current_page_item"> <a href="#">Notes</a></li>
         <li class="menu-item-has-children"> <a href="{% url 'BlogView' %}">Blog</a></li>
-        <li class="menu-item-has-children"> <a href="ContactView">Contact</a></li>
+        <li class="menu-item-has-children"> <a href="{% url 'ContactView' %}">Contact</a></li>
     </ul>
 {% endblock block_navbar %}
 {% block block_pagename %}
