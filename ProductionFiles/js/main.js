@@ -16,14 +16,16 @@
     // sticky menu
     var header = $('.menu-sticky');
     var win = $(window);
-    win.on('scroll', function() {
-       var scroll = win.scrollTop();
-       if (scroll < 300) {
-           header.removeClass("sticky");
-       } else {
-           header.addClass("sticky");
-       }
-    });
+    // win.on('scroll', function() {
+    //    var scroll = win.scrollTop();
+    //    if (scroll < 300) {
+    //        header.removeClass("sticky");
+    //    } else {
+    //    	   header.addClass()
+    //        header.css("position","fixed");
+    //        header.css("top","0px  !important;");
+    //    }
+    // });
 	
     // Latest News
 	$('.latest-news-slider').slick({
