@@ -114,7 +114,7 @@
                                                     <li class="menu-item-has-children"> <a href="{% url 'CoursesView' %}">Courses</a></li>
                                                     <li class="menu-item-has-children"> <a href="{% url 'NotesView' %}">Notes</a></li>
                                                     <li class="menu-item-has-children"> <a href="{% url 'BlogView' %}">Blog</a></li>
-                                                    <li> <a href="contact.html">Contact</a></li>
+                                                    <li> <a href="{% url 'ContactView' %}">Contact</a></li>
                                                 </ul>
                                             {% endblock block_navbar %}
                                         </nav>  
@@ -219,14 +219,14 @@
                             <div class="col-lg-3 col-md-12">
                                 <h5 class="footer-title">OUR SITEMAP</h5>
                                 <ul class="sitemap-widget">
-                                    <li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Home</a></li>
-                                    <li ><a href="about.html"><i class="fa fa-angle-right" aria-hidden="true"></i>About</a></li>
-                                    <li><a href="courses.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Courses</a></li>
-                                    <li><a href="teachers.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Teachers</a></li>
-                                    <li><a href="notes.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Notes</a></li>
-                                    <li><a href="contact.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Contacts</a></li>                                
-                                    <li><a href="blog.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog</a></li>
-                                    <li><a href="reviews.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Reviews</a></li>
+                                    <li class="active"><a href="{% url 'IndexView' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>Home</a></li>
+                                    <li ><a href="{% url 'AboutView' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>About</a></li>
+                                    <li><a href="{% url 'CoursesView' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>Courses</a></li>
+                                    <li><a href="{% url 'TeachersView' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>Teachers</a></li>
+                                    <li><a href="{% url 'NotesView' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>Notes</a></li>
+                                    <li><a href="{% url 'ContactView' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>Contacts</a></li>                                
+                                    <li><a href="{% url 'BlogView' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Reviews</a></li>
                                 </ul>
                             </div>
                             <div class="col-lg-3 col-md-12">
