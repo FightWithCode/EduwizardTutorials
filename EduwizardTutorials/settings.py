@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
+from decouple import config
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMAPLTES_DIRS = os.path.join(BASE_DIR, 'templates')
 STATICFILES = os.path.join(BASE_DIR, 'static')
@@ -20,12 +20,12 @@ STATICFILES = os.path.join(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'md+1$oyq+-d%at0!d4!&dc32eqsr@z)kxhh)-4-$v-=1c228r6'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['ewt.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = [config('ALLOWED_HOST')]
 
 
 # Application definition
@@ -78,12 +78,39 @@ WSGI_APPLICATION = 'EduwizardTutorials.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# For Postgresql or mysql
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER_NAME'),
+        'PASSWORD': config('DB_USER_PASS'),
+        'HOST': config('DB_HOST'),
+        'PORT': '',
     }
 }
+
+# if str(DB_TYPE) == str('mysql'):
+#     print("m")
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': config('DB_NAME'),
+#             'USER': config('DB_USER_NAME'),
+#             'PASSWORD': config('DB_USER_PASS'),
+#             'HOST': config('DB_HOST'),
+#             'PORT': '',
+#             'OPTIONS': {
+#                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#         }
+#     }
 
 
 # Internationalization
