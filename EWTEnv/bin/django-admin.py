@@ -1,4 +1,4 @@
-#!/home/fancychamps/Django Projects/EduwizardTutorials/EWTEnv/bin/python35
+#!/home/fancychamps/Django Projects/EduwizardTutorials/EWTEnv/bin/python3.5
 from django.core import management
 
 if __name__ == "__main__":
