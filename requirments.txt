@@ -1,0 +1,5 @@
+Django==1.11
+django-widget-tweaks==1.4.6
+psycopg2==2.8.4
+python-decouple==3.3
+pytz==2019.3
