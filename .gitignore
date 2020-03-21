@@ -56,10 +56,9 @@ coverage.xml
 local_settings.py
 db.sqlite3
 .env
-data.json
-FancyChamps.pem
 FancyChampsEnv
 EWTEnv
+ProductionFiles
 media
 .vscode
 

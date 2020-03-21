@@ -1,6 +1,5 @@
 (function() {
 
-  // VARIABLES
   const timeline = document.querySelector(".rs-timeline-2 ol"),
     elH = document.querySelectorAll(".rs-timeline-2 li > div"),
     arrows = document.querySelectorAll(".rs-timeline-2 .arrows .arrow"),
@@ -11,7 +10,6 @@
     xScrolling = 280,
     disabledClass = "disabled";
 
-  // START
   window.addEventListener("load", init);
 
   function init() {
@@ -20,7 +18,6 @@
     setSwipeFn(timeline, arrowPrev, arrowNext);
   }
 
-  // SET EQUAL HEIGHTS
   function setEqualHeights(el) {
     let counter = 0;
     for (let i = 0; i < el.length; i++) {
@@ -36,8 +33,6 @@
     }
   }
 
-  // CHECK IF AN ELEMENT IS IN VIEWPORT
-  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
   function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -48,7 +43,6 @@
     );
   }
 
-  // SET STATE OF PREV/NEXT ARROWS
   function setBtnState(el, flag = true) {
     if (flag) {
       el.classList.add(disabledClass);
@@ -60,7 +54,6 @@
     }
   }
 
-  // ANIMATE TIMELINE
   function animateTl(scrolling, el, tl) {
     let counter = 0;
     for (let i = 0; i < el.length; i++) {
@@ -92,7 +85,6 @@
     }
   }
 
-  // ADD SWIPE SUPPORT FOR TOUCH DEVICES
   function setSwipeFn(tl, prev, next) {
     const hammer = new Hammer(tl);
     hammer.on("swipeleft", () => next.click());

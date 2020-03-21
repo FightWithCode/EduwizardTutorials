@@ -1,15 +1,3 @@
-/**
-*
-* -----------------------------------------------------------------------------
-*
-* Template : Edulearn | Responsive Education HTML5 Template 
-* Author : rs-theme
-* Author URI : http://www.rstheme.com/
-*
-* -----------------------------------------------------------------------------
-*
-**/
-
 (function($) {
     "use strict";
 
@@ -61,11 +49,6 @@
 		}
 	})
 	
-	//Slider js 
-	/*-------------------------------------
-	       Home page Slider
-	       -------------------------------------*/	  
-	      // Declare Carousel jquery object
 	      var owl = $('#home-slider');
 
 	      // Carousel initialization

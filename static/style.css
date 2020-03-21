@@ -1,72 +1,5 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Roboto+Condensed:400,500,600,700');
-/**
-*
-* -----------------------------------------------------------------------------
-*
-* Template : Edulearn | Responsive Education HTML5 Template 
-* Author : rs-theme
-* Author URI : http://www.rstheme.com/
-*
-* -----------------------------------------------------------------------------
-*
-**/
-/* Table Of Content
----------------------------------------------------------
-01. General CSS
-02. Global Class
-03. Header Section 
-04. Sticky Menu
-05. Slider Section
-06. Breadcrumbs
-07. Services
-08. About Us
-09. Popular Cources
-10. Courses Details
-11. Rs-counter
-12. Upcoming Events
-13. Experienced Staffs
-14. Staffs Single
-15. Calltoaction
-16. Latest News
-17. Our Publications
-18. Testimonial
-19. Newsletter
-20. Rs-video
-21. Why Choose Us
-22. Pricing Table
-23. Instagram
-24. About Us Page
-25. Rs Timeline
-26. Elements
-27. Blog Pages
-28. Blog Details
-29. Shop Page Start Here
-30. Shop Single Page Start Here 
-31. Check Out css Start Here
-32. Shipping Area Start Here
-32. Contact Page Section Start Here
-33. Rs Gallery
-34. ScrollUp
-35. 404 Page Area Start Here 
-36. Preloader css
-37. Rs Footer
-
---------------------------------------------------------*/
-/**
-*
-* -----------------------------------------------------------------------------
-*
-* Template : RS-Construction - Construction HTML5 Template 
-* Author : rs-theme
-* Author URI : http://www.rstheme.com/
-*
-* -----------------------------------------------------------------------------
-*
-**/
-/*-----------------------
-    Animation
--------------------------*/
 [class*='rs-animation-'] {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
@@ -162,9 +95,6 @@
     left: 125%;
   }
 }
-/*-------------------------
-    Fade
----------------------------*/
 @-webkit-keyframes rs-fade {
   0% {
     opacity: 0;
@@ -181,9 +111,6 @@
     opacity: 1;
   }
 }
-/*---------------------------
-    Fade Top
-------------------------------*/
 @-webkit-keyframes rs-fade-top {
   0% {
     opacity: 0;
@@ -204,9 +131,6 @@
     transform: translateY(0);
   }
 }
-/*---------------------------
-    Fade Bottom
-------------------------------*/
 @-webkit-keyframes rs-fade-bottom {
   0% {
     opacity: 0;
@@ -227,9 +151,6 @@
     transform: translateY(0);
   }
 }
-/*---------------------------
-    Fade Left
-------------------------------*/
 @-webkit-keyframes rs-fade-left {
   0% {
     opacity: 0;
@@ -250,9 +171,6 @@
     transform: translateX(0);
   }
 }
-/*---------------------------
-    Fade Right
-------------------------------*/
 @-webkit-keyframes rs-fade-right {
   0% {
     opacity: 0;
@@ -273,9 +191,6 @@
     transform: translateX(0);
   }
 }
-/*------------------------------
-   Scale Up
---------------------------------*/
 @-webkit-keyframes rs-animation-scale-up {
   0% {
     opacity: 0;
@@ -296,9 +211,6 @@
     transform: scale(1);
   }
 }
-/*---------------------------
-    Scale Down
-------------------------------*/
 @-webkit-keyframes rs-animation-scale-down {
   0% {
     opacity: 0;
@@ -319,9 +231,6 @@
     transform: scale(1);
   }
 }
-/*---------------------------
-    Rotate
-------------------------------*/
 @-webkit-keyframes rs-rotate {
   0% {
     -webkit-transform: rotate(280deg);
@@ -338,9 +247,6 @@
     transform: rotate(360deg);
   }
 }
-/*---------------------------
-    Shake
-------------------------------*/
 @-webkit-keyframes rs-shake {
   0%,
   100% {
@@ -407,9 +313,6 @@
     transform: translateX(-1px);
   }
 }
-/*-------------------
-    Scale
----------------------*/
 @-webkit-keyframes rs-scale {
   0% {
     -webkit-transform: scale(1.2);
@@ -426,9 +329,6 @@
     transform: scale(1);
   }
 }
-/* -----------------------------------
-    01. General CSS
--------------------------------------*/
 html,
 body {
   font-size: 16px;
@@ -530,9 +430,6 @@ ul {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
-/********************************/
-/*       Slides backgrounds     */
-/********************************/
 .bg1 {
   background-image: url(images/bg/bg1.jpg);
   background-size: cover;
@@ -585,9 +482,6 @@ ul {
   background-attachment: fixed;
   background-position: center top;
 }
-/* ------------------------------------
-    02. Global Class
----------------------------------------*/
 .drak-color .owl-nav .owl-prev,
 .drak-color .owl-nav .owl-next,
 .drak-color .sec-title h3 {
@@ -994,9 +888,6 @@ ul {
 .rs-navigation-2 .owl-stage-outer {
   padding-bottom: 0 !important;
 }
-/* ------------------------------------
-    03. Header Section  
----------------------------------------*/
 .rs-toolbar {
   padding: 4px 0 5px;
   background-color: #111111;
