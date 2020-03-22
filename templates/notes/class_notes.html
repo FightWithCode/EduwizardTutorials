@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% block block_head %}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static "css/class_notes.css" %}">
+{% endblock block_head %}
 {% block block_navbar %}  
     <ul class="nav-menu">
         <li class="menu-item-has-children"> <a href="{% url 'IndexView' %}" class="home">Home</a></li>
@@ -28,7 +32,16 @@
             <div class="gridFilter">
                 <button class="active" data-filter="*">ALL</button>
             </div>
-            <div class="row grid">
+            <main class="">
+                <ol class="gradient-list row">
+                    {% for i in notes %}
+                        <div class="col-sm-6">
+                            <li class="ml-1"><a href="{% url 'NotesDownloadView' pdfurl=i.notes_document %}">{{i.note_class}} | {{i.subject}} | {{i.chapter_name}}</a></li>
+                        </div>
+                    {% endfor %}
+                </ol>
+            </main>
+            <!--<div class="row grid">
                 {% for i in notes %}
                     <div class="col-lg-4 col-md-6 grid-item filter1">
                         <div class="course-item">
@@ -60,7 +73,7 @@
                         </div>                      
                     </div>
                 {% endfor %}
-            </div>
+            </div>-->
         </div>
     </div>
 {% endblock block_body %}

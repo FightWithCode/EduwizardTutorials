@@ -2464,15 +2464,9 @@ ul {
 .rs-courses-3 .course-footer {
   padding: 15px 20px;
   background-color: #f0f0f0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
   font-weight: 600;
   font-size: 15px;
+  height:55px;
 }
 .rs-courses-3 .course-footer .course-button a {
   color: #505050;
