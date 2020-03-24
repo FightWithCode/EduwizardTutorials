@@ -3,7 +3,18 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from pages import views as PagesView
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import BlogSitemap
+from notes.sitemaps import NoteSitemap
+from pages.sitemaps import PageSitemap
+from django.urls import path
 
+
+sitemaps = {
+    'blogs': BlogSitemap,
+    'pages': PageSitemap,
+    'notes': NoteSitemap,
+}
 
 urlpatterns = [
     # Examples:
@@ -20,7 +31,7 @@ urlpatterns = [
     url(r'^contact/$', PagesView.ContactView, name="ContactView"),
     url(r'^notes/$', PagesView.NotesView, name="NotesView"),
     url(r'^thankyou/$', PagesView.SubmitThankView, name="SubmitThankView"),
-    # url(r'^join/$', PagesView.JoinQueryView, name="JoinQueryView"),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
 
 
