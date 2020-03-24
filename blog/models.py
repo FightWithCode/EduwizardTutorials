@@ -7,7 +7,7 @@ class Blog(models.Model):
 	front_image = models.CharField(max_length=100)
 	slug = models.CharField(max_length=120, default="test")
 	description = models.CharField(max_length=500)
-	html_file = models.CharField(max_length=25)
+	content = models.TextField()
 	public = models.BooleanField()
 
 	def __str__(self):

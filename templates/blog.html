@@ -22,111 +22,25 @@
 {% block block_body %}
     <div class="blog-page-area sec-spacer">
         <div class="container">
-            <div class="row mb-50 blog-inner">
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-images">
-                        <a href="#"><i class="fa fa-link" aria-hidden="true"></i> <img src="{% static "images/blogpage/1.jpg" %}" alt=""></a>
+            {% for i in blogs %}
+                <div class="row mb-50 blog-inner">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="blog-images">
+                            <center><a href="#"><i class="fa fa-link" aria-hidden="true"></i> <img src="{% static 'images/blogpage/'|add:i.front_image %}" alt=""></a></center>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="blog-content">
+                            <h4><a href="#">{{i.title}}</a></h4>
+                            <ul class="blog-meta">
+                                <li class="time"><a href="#"><i class="fa fa-user-o"></i> Admin | <i class="fa fa-calendar-check-o"></i> {{i.date}}</a></li>
+                            </ul>
+                            <p>{{i.description}}</p>
+                            <a class="primary-btn" href="{% url 'BlogDetailView' slug=i.slug %}">Read More</a>
+                        </div> 
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-content">
-                        <div class="date">
-                            <i class="fa fa-calendar-check-o"></i> 13 Sep 2017
-                        </div>
-                        <h4><a href="#">Traditional Elementary Education of Traditional College</a></h4>
-                        <ul class="blog-meta">
-                            <li class="time"><a href="#"><i class="fa fa-user-o"></i> Admin</a></li>
-                            <li class="date"><i class="fa fa-comments-o"></i> 05</li>
-                        </ul>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</p>
-                        <a class="primary-btn" href="#">Read More</a>
-                    </div> 
-                </div>
-            </div><!-- .blog-inner end -->
-            <div class="row mb-50 blog-inner">
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-images">
-                        <a href="#"><i class="fa fa-link" aria-hidden="true"></i> <img src="{% static "images/blogpage/2.jpg" %}" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-content">
-                        <div class="date">
-                            <i class="fa fa-calendar-check-o"></i> 13 Sep 2017
-                        </div>
-                        <h4><a href="#">Traditional Elementary Education of Traditional College</a></h4>
-                        <ul class="blog-meta">
-                            <li class="time"><a href="#"><i class="fa fa-user-o"></i> Admin</a></li>
-                            <li class="date"><i class="fa fa-comments-o"></i> 05</li>
-                        </ul>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</p>
-                        <a class="primary-btn" href="#">Read More</a>
-                    </div> 
-                </div>
-            </div><!-- .blog-inner end -->
-            <div class="row mb-50 blog-inner">
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-images">
-                        <a href="#"><i class="fa fa-link" aria-hidden="true"></i> <img src="{% static "images/blogpage/3.jpg" %}" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-content">
-                        <div class="date">
-                            <i class="fa fa-calendar-check-o"></i> 13 Sep 2017
-                        </div>
-                        <h4><a href="#">Traditional Elementary Education of Traditional College</a></h4>
-                        <ul class="blog-meta">
-                            <li class="time"><a href="#"><i class="fa fa-user-o"></i> Admin</a></li>
-                            <li class="date"><i class="fa fa-comments-o"></i> 05</li>
-                        </ul>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</p>
-                        <a class="primary-btn" href="#">Read More</a>
-                    </div> 
-                </div>
-            </div><!-- .blog-inner end -->
-            <div class="row mb-50 blog-inner">
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-images">
-                        <a href="#"><i class="fa fa-link" aria-hidden="true"></i> <img src="{% static "images/blogpage/4.jpg" %}" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-content">
-                        <div class="date">
-                            <i class="fa fa-calendar-check-o"></i> 13 Sep 2017
-                        </div>
-                        <h4><a href="#">Traditional Elementary Education of Traditional College</a></h4>
-                        <ul class="blog-meta">
-                            <li class="time"><a href="#"><i class="fa fa-user-o"></i> Admin</a></li>
-                            <li class="date"><i class="fa fa-comments-o"></i> 05</li>
-                        </ul>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</p>
-                        <a class="primary-btn" href="#">Read More</a>
-                    </div> 
-                </div>
-            </div><!-- .blog-inner end -->
-            <div class="row mb-50 blog-inner">
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-images">
-                        <a href="#"><i class="fa fa-link" aria-hidden="true"></i> <img src="{% static "images/blogpage/5.jpg" %}" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="blog-content">
-                        <div class="date">
-                            <i class="fa fa-calendar-check-o"></i> 13 Sep 2017
-                        </div>
-                        <h4><a href="#">Traditional Elementary Education of Traditional College</a></h4>
-                        <ul class="blog-meta">
-                            <li class="time"><a href="#"><i class="fa fa-user-o"></i> Admin</a></li>
-                            <li class="date"><i class="fa fa-comments-o"></i> 05</li>
-                        </ul>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</p>
-                        <a class="primary-btn" href="#">Read More</a>
-                    </div> 
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <footer id="rs-footer" class="bg3 rs-footer">

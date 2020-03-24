@@ -9,7 +9,8 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'EduwizardTutorials.views.home', name='home'),
     url(r'^notes/', include('notes.urls')),
-    url(r'^MasterAdminOfEWT/', include(admin.site.urls)),
+    url(r'^blog/', include('blog.urls')),
+    url(r'^MasterAdminOfEWT/', admin.site.urls),
     url(r'^$', PagesView.IndexView, name="IndexView"),
     url(r'^about/$', PagesView.AboutView, name="AboutView"),
     url(r'^teachers/$', PagesView.TeachersView, name="TeachersView"),

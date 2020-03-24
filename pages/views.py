@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import JoinQueryForm
 from django.shortcuts import redirect
+from blog.models import Blog
 
 
 def IndexView(request):
@@ -28,7 +29,8 @@ def NotesView(request):
 
 
 def BlogView(request):
-	return render(request, 'blog.html', {})
+	obj = Blog.objects.filter(public=True)[:10]
+	return render(request, 'blog.html', {'blogs': obj})
 
 
 def SubmitThankView(request):
