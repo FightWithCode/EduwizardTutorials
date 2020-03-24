@@ -4,8 +4,7 @@ from django.shortcuts import get_object_or_404
 
 
 def ClassNotesView(request, std):
-	objs = Note.objects.filter(note_class__iexact=std)
-	print(objs)
+	objs = Note.objects.filter(note_class__iexact=std).order_by('chapter_no')
 	return render(request, 'notes/class_notes.html', {'notes': objs})
 
 

@@ -17,4 +17,15 @@ class Note(models.Model):
     	return self.note_class + ' | ' + self.subject + ' | ' + self.chapter_name + ' | ' + self.language
 
     def get_absolute_url(self):
-        return reverse('notes:NotesDownloadView', kwargs={'pdfurl': self.notes_document})
+        return reverse('NotesDownloadView', kwargs={'pdfurl': self.notes_document})
+
+
+class Classes(models.Model):
+    standard = models.CharField(max_length=10)
+    date = models.TimeField(auto_now=True)
+
+    def __str__(self):
+        return self.standard
+
+    def get_absolute_url(self):
+        return reverse('ClassNotesView', kwargs={'std': self.standard})

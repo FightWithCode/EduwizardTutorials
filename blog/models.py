@@ -19,4 +19,4 @@ class Blog(models.Model):
 		super(Blog, self).save(*args, **kwargs)
 
 	def get_absolute_url(self):
-		return reverse('blog:BlogDetailView', kwargs={'slug': self.slug})
+		return reverse('BlogDetailView', kwargs={'slug': self.slug})
