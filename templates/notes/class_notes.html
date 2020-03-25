@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 {% block block_head %}
 {{block.super}}
 <link rel="stylesheet" type="text/css" href="{% static "css/class_notes.css" %}">
@@ -29,9 +30,8 @@
             <div class="abt-title">
                 <h2>AVAILABLE NOTES</h2>
             </div>
-            <div class="gridFilter">
-                <button class="active" data-filter="*">ALL</button>
-            </div>
+            <p>The class {{note_class}} science syllabus carries a lot of chapters that go on to become the precursor for many advanced science topics in higher classes. It is important to gain a thorough knowledge of the fundamentals in this class to avoid struggls in advanced classes. The CBSE class {{note_class}} science notes act as a revision guide which helps the students prepare for exams without stress or anxiety. The class {{note_class}} science revision notes focus on all the important points and topics which re-appear in most of the previous year question papers. This particularly helps the students identify the important parts and allows them to gain an advantage over the other students in the exams. The class {{note_class}} science notes free pdf download is readily available for anyone. This saves a lot of time for the students and alleviates the need for tuitions or special classes.</p>
+            <p>Here's a list of all the available notes for cbse class {{note_class}} science subjects. All these science class {{note_class}} notes are 100 per cent free to view and download.</p>
             <main class="">
                 <ol class="gradient-list row">
                     {% for i in notes %}
@@ -41,39 +41,47 @@
                     {% endfor %}
                 </ol>
             </main>
-            <!--<div class="row grid">
-                {% for i in notes %}
-                    <div class="col-lg-4 col-md-6 grid-item filter1">
-                        <div class="course-item">
-                            <div class="course-img">
-                                <img src="{% static "images/courses/10.jpg" %}" alt="" />
-                                <div class="course-toolbar">
-                                    <h4 class="course-category"><a href="#">Class {{i.note_class}} | {{i.subject}}</a></h4>
-                                    <div class="course-date">
-                                        <i class="fa fa-file-pdf-o"></i> PDF
-                                    </div>
-                                    <div class="course-duration">
-                                        <i class="fa fa-inr"></i> FREE
-                                    </div>
+            <div class="contact-comment-section">
+                <h3>Did'nt found what you are looking for?</h3>
+                <p>Just fill this simple form and We will reach you to help you as soon as possible.</p>
+                <div id="form-messages"></div>
+                <form id="contact-form" method="post">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.source.errors }}
+                    {{ form.source }}
+                    <fieldset>
+                        <div class="row">                                      
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    {{ form.name.label_tag }}
+                                    {% render_field form.name class="form-control" %}
+                                    {{ form.name.errors }}
                                 </div>
                             </div>
-                            <div class="course-body">
-                                <div class="course-desc">
-                                    <h4 class="course-title">[{{i.language}}]{{i.chapter}}</a></h4>
-                                    <p>
-                                        {{i.description}}
-                                    </p>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    {{ form.subject_or_class.label_tag }}
+                                    {% render_field form.subject_or_class class="form-control" %}
+                                    {{ form.subject_or_class.errors }}
                                 </div>
                             </div>
-                            <div class="course-footer">
-                                <div class="course-button">
-                                    <a href="{{i.notes_document.url}}">DOWNLOAD NOW</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    {{ form.message.label_tag }}
+                                    {% render_field form.message class="form-control" %}
+                                    {{ form.message.errors }}
                                 </div>
                             </div>
-                        </div>                      
-                    </div>
-                {% endfor %}
-            </div>-->
+                        </div>                                 
+                        <div class="form-group mb-0">
+                            <input class="btn-send" type="submit" value="Submit">
+                        </div>   
+                    </fieldset>
+                </form>                     
+            </div>
         </div>
     </div>
 {% endblock block_body %}
