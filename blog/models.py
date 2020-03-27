@@ -9,6 +9,7 @@ class Blog(models.Model):
 	slug = models.CharField(max_length=120, default="test")
 	description = models.CharField(max_length=500)
 	content = models.TextField()
+	author = models.CharField(max_length=25)
 	public = models.BooleanField()
 
 	def __str__(self):
