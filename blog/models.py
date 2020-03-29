@@ -10,6 +10,7 @@ class Blog(models.Model):
 	description = models.CharField(max_length=500)
 	content = models.TextField()
 	author = models.CharField(max_length=25)
+	tags = models.CharField(max_length=200)
 	public = models.BooleanField()
 
 	def __str__(self):

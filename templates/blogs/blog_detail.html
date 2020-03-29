@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 life-style">
                                 <span class="author"> 
-                                    <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> {{i.author}} </a>
+                                    <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> {{blog.author}} </a>
                                 </span> 
                                 <!--<span class="comment"> 
                                     <a href="#"> 
@@ -50,13 +50,13 @@
                             <div class="col-lg-6 col-md--12">
                                 <ul class="share-link1">
                                     <li><a href="#"> Tags:</a></li>
-                                    <li><a href="#"> Building</a></li>
-                                    <li><a href="#"> Plumbing</a></li>
-                                    <li><a href="#"> Painting</a></li>
+                                    {% for i in tags %}
+                                        <li><a href="#"> {{i}}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
-                    </div><!-- .share-section End -->
+                    </div>
 
                     <div class="share-section2">
                         <div class="row">
@@ -76,41 +76,34 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <ul class="next-pre-section">
-                                <li class="left-arrow"><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous Post</a></li>
-                                <li class="right-arrow"><a href="#">Next Post <i class="fa fa-angle-right" aria-hidden="true"></i> </a></li>
-                            </ul><!-- .next-pre-section End -->
+                                {% if first_obj %}
+                                    <li class="left-arrow"><a href="{% url 'BlogDetailView' slug=pre_obj.slug %}"><i class="fa fa-angle-left" aria-hidden="true"></i> Previous Post</a></li>
+                                {% else %}
+                                    <li class="left-arrow"><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>Previous Post</a></li>
+                                {% endif %}
+                                {% if last_obj %}
+                                    <li class="right-arrow"><a href="{% url 'BlogDetailView' slug=next_obj.slug %}">Next Post <i class="fa fa-angle-right" aria-hidden="true"></i> </a></li>       
+                                {% else %}
+                                    <li class="right-arrow"><a href="#">Next Post <i class="fa fa-angle-right" aria-hidden="true"></i> </a></li>
+                                {% endif %}
+                                
+                            </ul>
                         </div>
                     </div>    
                     <div class="like-section mt-30">
                         <h3 class="title-bg">YOU MIGHT ALSO LIKE</h3>
                         <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="popular-post-img">
-                                    <a href="#"><img src="{% static "images/blog-details/mid1.jpg" %}" alt="Blog single photo"></a>                                   
-                                </div>                                
-                                <h5>
-                                    <a href="#">Easy to Use Your Gallery</a>
-                                </h5>
-                                <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> Sep 13, 2017</span>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="popular-post-img">
-                                    <a href="#"><img src="{% static "images/blog-details/mid2.jpg" %}" alt="Blog single photo"></a>                                   
-                                </div>                                
-                                <h5>
-                                    <a href="#">Easy to Use Your Gallery</a>
-                                </h5>
-                                <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> Sep 13, 2017</span>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="popular-post-img">
-                                    <a href="#"><img src="{% static "images/blog-details/mid3.jpg" %}" alt="Blog single photo"></a>                                  
-                                </div>                                
-                                <h5>
-                                    <a href="#">Easy to Use Your Gallery</a>
-                                </h5>
-                                <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> Sep 13, 2017</span>
-                            </div>
+                            {% for i in sugested %}
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <div class="popular-post-img">
+                                        <a href="#"><img src="{% static 'images/blogpage/'|add:i.front_image %}" alt="Blog single photo"></a>                                   
+                                    </div>                                
+                                    <h5>
+                                        <a href="#">{{i.title}}</a>
+                                    </h5>
+                                    <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{i.date}}</span>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>                                   
                 </div>
