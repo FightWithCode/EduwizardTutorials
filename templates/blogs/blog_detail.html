@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block block_navbar %}  
+{% block block_navbar %}
     <ul class="nav-menu">
         <li class="menu-item-has-children"> <a href="{% url 'IndexView' %}" class="home">Home</a></li>
         <li class="menu-item-has-children"> <a href="#">About Us</a>
             <ul class="sub-menu">
                 <li><a href="{% url 'AboutView' %}">About Us</a></li>
                 <li><a href="{% url 'TeachersView' %}">Teachers</a></li>
-                <li> <a href="{% url 'GalleryView' %}">Gallery</a> </li> 
+                <li> <a href="{% url 'GalleryView' %}">Gallery</a> </li>
             </ul>
         </li>
         <li class="menu-item-has-children"> <a href="{% url 'CoursesView' %}">Courses</a></li>
@@ -31,23 +31,23 @@
                     {{blog.content|safe}}
                     <div class="share-section">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 life-style">
-                                <span class="author"> 
+                            <div class="col-lg-5 life-style">
+                                <span class="author">
                                     <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> {{blog.author}} </a>
-                                </span> 
-                                <!--<span class="comment"> 
-                                    <a href="#"> 
+                                </span>
+                                <!--<span class="comment">
+                                    <a href="#">
                                         <i class="fa fa-commenting-o" aria-hidden="true"></i> 12
                                     </a>
                                 </span>-->
                                 <span class="date">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i> {{blog.date}} 
+                                    <i class="fa fa-calendar" aria-hidden="true"></i> {{blog.date}}
                                 </span>
                                 <!--<span class="cat">
                                     <a href="#"><i class="fa fa-folder-o" aria-hidden="true"></i> Life Style </a>
                                 </span>-->
                             </div>
-                            <div class="col-lg-6 col-md--12">
+                            <div class="col-lg-7">
                                 <ul class="share-link1">
                                     <li><a href="#"> Tags:</a></li>
                                     {% for i in tags %}
@@ -82,22 +82,22 @@
                                     <li class="left-arrow"><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>Previous Post</a></li>
                                 {% endif %}
                                 {% if last_obj %}
-                                    <li class="right-arrow"><a href="{% url 'BlogDetailView' slug=next_obj.slug %}">Next Post <i class="fa fa-angle-right" aria-hidden="true"></i> </a></li>       
+                                    <li class="right-arrow"><a href="{% url 'BlogDetailView' slug=next_obj.slug %}">Next Post <i class="fa fa-angle-right" aria-hidden="true"></i> </a></li>
                                 {% else %}
                                     <li class="right-arrow"><a href="#">Next Post <i class="fa fa-angle-right" aria-hidden="true"></i> </a></li>
                                 {% endif %}
-                                
+
                             </ul>
                         </div>
-                    </div>    
+                    </div>
                     <div class="like-section mt-30">
                         <h3 class="title-bg">YOU MIGHT ALSO LIKE</h3>
                         <div class="row">
                             {% for i in sugested %}
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="popular-post-img">
-                                        <a href="#"><img src="{% static 'images/blogpage/'|add:i.front_image %}" alt="Blog single photo"></a>                                   
-                                    </div>                                
+                                        <a href="#"><img src="{% static 'images/blogpage/'|add:i.front_image %}" alt="Blog single photo"></a>
+                                    </div>
                                     <h5>
                                         <a href="#">{{i.title}}</a>
                                     </h5>
@@ -105,7 +105,7 @@
                                 </div>
                             {% endfor %}
                         </div>
-                    </div>                                   
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="sidebar-area">
@@ -157,7 +157,7 @@
                                     <a href="#">ADMISSIONS</a>
                                 </li>
                             </ul>
-                        </div><!-- .tags-cloud end --> 
+                        </div><!-- .tags-cloud end -->
                         <div class="newsletter">
                             <h4>Newsletter</h4>
                             <p>Sign up for our Newsletter !</p>
@@ -165,12 +165,12 @@
                                 <input class="form-control" placeholder="support@rstheme.com" name="newsletter-term" id="newsletter-term" type="text">
                                 <button class="btn btn-default" type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                             </div>
-                        </div><!-- .newsletter end --> 
-                    </div><!-- .sidebar-area end --> 
-                </div>             
+                        </div><!-- .newsletter end -->
+                    </div><!-- .sidebar-area end -->
+                </div>
             </div>
         </div>
-    </div>    
+    </div>
     <footer id="rs-footer" class="bg3 rs-footer">
         <div class="container">
             <div>
@@ -204,7 +204,7 @@
                             </p>
                         </div>
                     </div>
-                </div>                  
+                </div>
             </div>
         </div>
 {% endblock block_body %}

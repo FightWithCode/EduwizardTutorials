@@ -30,7 +30,7 @@ def BlogDetailView(request, slug):
 		except ObjectDoesNotExist:
 			i = i + 1
 	tag_str = obj.tags
-	tags = tag_str.split()
+	tags = tag_str.split(',')
 	all_objs = Blog.objects.filter(public=True)
 	no = random.sample(range(all_objs.count()), 3)
 	sugested = []
