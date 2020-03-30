@@ -2,7 +2,9 @@ from django.shortcuts import render
 from .forms import JoinQueryForm
 from django.shortcuts import redirect
 from blog.models import Blog
-
+import os
+from django.conf import settings
+from django.http import HttpResponse
 
 def IndexView(request):
 	return render(request, 'index.html', {})
@@ -50,4 +52,11 @@ def ContactView(request):
 	return render(request, 'contact.html', {'form': form})
 
 
-# def JoinQueryView(request):
+def sw_js(request):
+    print(settings.STATIC_ROOT)
+    print(os.path.join(settings.STATIC_ROOT, "rahul"))
+    full_script_path = os.path.join(settings.STATIC_ROOT, "js/sw.js")
+    print(full_script_path)
+    with open(full_script_path, 'r') as f:
+        javascript_contents = f.read()
+    return HttpResponse(javascript_contents, content_type="text/javascript")
