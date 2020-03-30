@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block block_navbar %}  
+{% block block_navbar %}
     <ul class="nav-menu">
         <li class="menu-item-has-children"> <a href="{% url 'IndexView' %}" class="home">Home</a></li>
         <li class="menu-item-has-children"> <a href="#">About Us</a>
             <ul class="sub-menu">
                 <li><a href="{% url 'AboutView' %}">About Us</a></li>
                 <li><a href="{% url 'TeachersView' %}">Teachers</a></li>
-                <li> <a href="{% url 'GalleryView' %}">Gallery</a> </li> 
+                <li> <a href="{% url 'GalleryView' %}">Gallery</a> </li>
             </ul>
         </li>
         <li class="menu-item-has-children"> <a href="{% url 'CoursesView' %}">Courses</a></li>
@@ -37,10 +37,22 @@
                             </ul>
                             <p>{{i.description}}</p>
                             <a class="primary-btn" href="{% url 'BlogDetailView' slug=i.slug %}">Read More</a>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             {% endfor %}
+            <div class="container">
+                <!--<script type="text/javascript">-->
+                <!--	atOptions = {-->
+                <!--		'key' : 'bad3eb855e7b6b57c0e5bf794003d803',-->
+                <!--		'format' : 'iframe',-->
+                <!--		'height' : 300,-->
+                <!--		'width' : 160,-->
+                <!--		'params' : {}-->
+                <!--	};-->
+                <!--	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madratesforall.com/bad3eb855e7b6b57c0e5bf794003d803/invoke.js"></scr' + 'ipt>');-->
+                <!--</script>-->
+            </div>
         </div>
     </div>
     <footer id="rs-footer" class="bg3 rs-footer">
@@ -76,7 +88,7 @@
                             </p>
                         </div>
                     </div>
-                </div>                  
+                </div>
             </div>
         </div>
 {% endblock block_body %}
