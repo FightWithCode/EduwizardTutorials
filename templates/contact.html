@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load widget_tweaks %}
+{% block title %}
+    {{block.super}}Contact Us
+{% endblock title %}
 {% block block_navbar %}  
     <ul class="nav-menu">
         <li class="menu-item-has-children"> <a href="{% url 'IndexView' %}" class="home">Home</a></li>
