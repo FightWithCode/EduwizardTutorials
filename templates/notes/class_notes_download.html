@@ -3,6 +3,9 @@
 {% block block_head %}
 {{block.super}}
 <link rel="stylesheet" type="text/css" href="{% static "css/class_notes.css" %}">
+{% block title %}
+    {{block.super}}CBSE Notes Download
+{% endblock title %}
 {% endblock block_head %}
 {% block block_navbar %}
     <ul class="nav-menu">

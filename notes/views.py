@@ -1,13 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Note
 from django.shortcuts import get_object_or_404
 from. forms import NotesQueryForm
-from django.shortcuts import redirect
 
 
 def ClassNotesView(request, std):
 	objs = Note.objects.filter(note_class__iexact=std).order_by('chapter_no')
 	note_class = std
+	note_subject = "Science"
 
 	form = NotesQueryForm()
 
@@ -18,7 +18,7 @@ def ClassNotesView(request, std):
 			return redirect('SubmitThankView')
 		else:
 			print("Form Invalid")
-	return render(request, 'notes/class_notes.html', {'notes': objs, 'note_class': note_class, 'form': form})
+	return render(request, 'notes/class_notes.html', {'notes': objs, 'note_class': note_class, 'form': form, 'note_subject': note_subject})
 
 
 def NotesDownloadView(request, pdfurl):
