@@ -5,7 +5,7 @@ from django.urls import reverse
 class Note(models.Model):
     note_class = models.CharField(max_length=10)
     subject = models.CharField(max_length=25)
-    chapter_no = models.CharField(max_length=2)
+    chapter_no = models.IntegerField()
     chapter_name = models.CharField(max_length=50)
     notes_document = models.FileField(upload_to='documents/')
     language = models.CharField(max_length=25)
