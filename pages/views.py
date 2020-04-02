@@ -6,8 +6,22 @@ import os
 from django.conf import settings
 from django.http import HttpResponse
 
+
 def IndexView(request):
 	return render(request, 'index.html', {})
+
+
+def ContactView(request):
+	form = JoinQueryForm()
+
+	if request.method == 'POST':
+		form = JoinQueryForm(request.POST)
+		if form.is_valid():
+			form.save(commit=True)
+			return redirect('SubmitThankView')
+		else:
+			print("Form Invalid")
+	return render(request, 'contact.html', {'form': form})
 
 
 def AboutView(request):
@@ -37,19 +51,6 @@ def BlogView(request):
 
 def SubmitThankView(request):
 	return render(request, 'submit_thankyou.html', {})
-
-
-def ContactView(request):
-	form = JoinQueryForm()
-
-	if request.method == 'POST':
-		form = JoinQueryForm(request.POST)
-		if form.is_valid():
-			form.save(commit=True)
-			return redirect('SubmitThankView')
-		else:
-			print("Form Invalid")
-	return render(request, 'contact.html', {'form': form})
 
 
 def sw_js(request):
