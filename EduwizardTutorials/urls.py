@@ -21,6 +21,7 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'EduwizardTutorials.views.home', name='home'),
     url(r'^notes/', include('notes.urls')),
+    url(r'^newsletter/$', PagesView.NewsLetterView, name="NewsLetterView"),
     url(r'^blog/', include('blog.urls')),
     url(r'^MasterAdminOfEWT/', admin.site.urls),
     url(r'^sw.js', PagesView.sw_js),
