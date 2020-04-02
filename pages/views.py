@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import JoinQueryForm
 from django.shortcuts import redirect
 from blog.models import Blog
+from .models import NewsLetter
 import os
 from django.conf import settings
 from django.http import HttpResponse
@@ -61,3 +62,12 @@ def sw_js(request):
     with open(full_script_path, 'r') as f:
         javascript_contents = f.read()
     return HttpResponse(javascript_contents, content_type="text/javascript")
+
+
+def NewsLetterView(request):
+	email = request.POST.get('email')
+	if ('@' and '.') in email:
+		NewsLetter.objects.create(email=email)
+		return HttpResponse("<center>Thanks for Subscribing our New Letter<br><a href=\"https://www.eduwizardtutorials.com\">Home</a></center>")
+	else:
+		return HttpResponse("<center>Not a Valid Email<br><a href=\"https://www.eduwizardtutorials.com\">Home</a></center>")
