@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="{% static "css/class_notes.css" %}">
 {% endblock block_head %}
 {% block title %}
-    {{block.super}}Class {{obj.note_class}} {{obj.note_subject}} Notes
+    {{block.super}}Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}} {{obj.chapter_name}} Solution and Notes
 {% endblock title %}
 {% block block_navbar %}
     <ul class="nav-menu">
