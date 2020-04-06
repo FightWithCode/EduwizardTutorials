@@ -604,83 +604,47 @@
 						<div class="news-normal-block">
 		                    <div class="news-img">
 		                    	<a href="#">
-		                        	<img src="{% static "images/blog/1.jpg" %}" alt="" />
+		                        	<img src="{% static 'images/blogpage/'|add:first_obj.front_image %}" alt="" />
 		                    	</a>
 		                    </div>
 	                    	<div class="news-date">
 	                    		<i class="fa fa-calendar-check-o"></i>
-	                    		<span>June  28,  2017</span>
+	                    		<span>{{first_obj.date}}</span>
 	                    	</div>
-	                    	<h4 class="news-title"><a href="#">Those Other College Expenses You Aren't Thinking About</a></h4>
+	                    	<h4 class="news-title"><a href="{% url 'BlogDetailView' slug=first_obj.slug %}">{{first_obj.title}}</a></h4>
 	                    	<div class="news-desc">
 	                    		<p>
-	                    			Lookig to take admission for udergraduate or graduate courses and worry about the expenses. Go through this article for all the expenses related to collage werther they are directly or indirectly.
+	                    			{{first_obj.description|slice:'200'}}
 	                    		</p>
 	                    	</div>
 	                    	<div class="news-btn">
-	                    		<a href="#">Read More</a>
+	                    		<a href="{% url 'BlogDetailView' slug=first_obj.slug %}">Read More</a>
 	                    	</div>
 		                </div>
 			        </div>
 			        <div class="col-md-6">
 			        	<div class="news-list-block">
-			        		<div class="news-list-item">
-			                    <div class="news-img">
-			                    	<a href="#">
-			                        	<img src="{% static "images/blog/2.jpg" %}" alt="" />
-			                    	</a>
-			                    </div>
-								<div class="news-content">
-			                    	<h5 class="news-title"><a href="#">While the lovely valley team work</a></h5>
-			                    	<div class="news-date">
-			                    		<i class="fa fa-calendar-check-o"></i>
-			                    		<span>June  28,  2017</span>
-			                    	</div>
-			                    	<div class="news-desc">
-			                    		<p>
-			                    			Here are some of the best tips for team work by which you can achive more while being in a team.
-			                    		</p>
-			                    	</div>
-				                </div>
-			        		</div>
-			        		<div class="news-list-item">
-			                    <div class="news-img">
-			                    	<a href="#">
-			                        	<img src="{% static "images/blog/3.jpg" %}" alt="" />
-			                    	</a>
-			                    </div>
-								<div class="news-content">
-			                    	<h5 class="news-title"><a href="#">I must explain to you how all this idea</a></h5>
-			                    	<div class="news-date">
-			                    		<i class="fa fa-calendar-check-o"></i>
-			                    		<span>June  28,  2017</span>
-			                    	</div>
-			                    	<div class="news-desc">
-			                    		<p>
-			                    			As the old saying goes 'An Idea can change your life', Here an idea to change your prespective
-			                    		</p>
-			                    	</div>
-				                </div>
-			        		</div>
-			        		<div class="news-list-item">
-			                    <div class="news-img">
-			                    	<a href="#">
-			                        	<img src="{% static "images/blog/4.jpg" %}" alt="" />
-			                    	</a>
-			                    </div>
-								<div class="news-content">
-			                    	<h5 class="news-title"><a href="#">I should be incapable of drawing a stroke</a></h5>
-			                    	<div class="news-date">
-			                    		<i class="fa fa-calendar-check-o"></i>
-			                    		<span>June  28,  2017</span>
-			                    	</div>
-			                    	<div class="news-desc">
-			                    		<p>
-			                    			Do you realy thing you can not draw then you are wrong, because...
-			                    		</p>
-			                    	</div>
-				                </div>
-			        		</div>
+			        		{% for i in objs %}
+				        		<div class="news-list-item">
+				                    <div class="news-img">
+				                    	<a href="{% url 'BlogDetailView' slug=i.slug %}">
+				                        	<img src="{% static 'images/blogpage/'|add:i.front_image %}" alt="" />
+				                    	</a>
+				                    </div>
+									<div class="news-content">
+				                    	<h5 class="news-title"><a href="{% url 'BlogDetailView' slug=i.slug %}">{{i.title}}</a></h5>
+				                    	<div class="news-date">
+				                    		<i class="fa fa-calendar-check-o"></i>
+				                    		<span>{{i.date}}</span>
+				                    	</div>
+				                    	<div class="news-desc">
+				                    		<p>
+				                    			{{i.description|slice:'110'}}...
+				                    		</p>
+				                    	</div>
+					                </div>
+				        		</div>	
+			        		{% endfor %}
 			        	</div>
 			        </div>
 			    </div>

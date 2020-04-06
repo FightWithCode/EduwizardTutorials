@@ -9,7 +9,12 @@ from django.http import HttpResponse
 
 
 def IndexView(request):
-	return render(request, 'index.html', {})
+	objs = Blog.objects.filter(public=True).order_by('-id')[:4]
+	first_obj = objs.first()
+	objs = objs[1:4]
+	print(objs)
+	print(first_obj)
+	return render(request, 'index.html', {'objs': objs, 'first_obj': first_obj})
 
 
 def ContactView(request):

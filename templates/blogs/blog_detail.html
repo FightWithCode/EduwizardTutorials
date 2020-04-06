@@ -38,17 +38,9 @@
                                 <span class="author">
                                     <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> {{blog.author}} </a>
                                 </span>
-                                <!--<span class="comment">
-                                    <a href="#">
-                                        <i class="fa fa-commenting-o" aria-hidden="true"></i> 12
-                                    </a>
-                                </span>-->
                                 <span class="date">
                                     <i class="fa fa-calendar" aria-hidden="true"></i> {{blog.date}}
                                 </span>
-                                <!--<span class="cat">
-                                    <a href="#"><i class="fa fa-folder-o" aria-hidden="true"></i> Life Style </a>
-                                </span>-->
                             </div>
                             <div class="col-lg-7">
                                 <ul class="share-link1">
@@ -97,10 +89,10 @@
                             {% for i in sugested %}
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="popular-post-img">
-                                        <a href="#"><img src="{% static 'images/blogpage/'|add:i.front_image %}" alt="Blog single photo"></a>
+                                        <a href="{% url 'BlogDetailView' slug=i.slug %}"><img src="{% static 'images/blogpage/'|add:i.front_image %}" alt="Blog single photo"></a>
                                     </div>
                                     <h5>
-                                        <a href="#">{{i.title}}</a>
+                                        <a href="{% url 'BlogDetailView' slug=i.slug %}">{{i.title}}</a>
                                     </h5>
                                     <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{i.date}}</span>
                                 </div>
