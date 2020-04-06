@@ -53,9 +53,7 @@
                             <div class="col-lg-7">
                                 <ul class="share-link1">
                                     <li><a href="#"> Tags:</a></li>
-                                    {% for i in tags %}
-                                        <li><a href="#"> {{i}}</a></li>
-                                    {% endfor %}
+
                                 </ul>
                             </div>
                         </div>
@@ -113,52 +111,37 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="sidebar-area">
                         <div class="cate-box">
-                            <h3 class="title">Categories</h3>
-                            <ul>
-                                <li>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#">Analysis & Features <span>(05)</span></a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#">Video Reviews <span>(07)</span></a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#">Engineering Tech <span>(09)</span></a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#"> Righteous Indignation <span>(08)</span></a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="#">General Education <span>(04)</span></a>
-                                </li>
-                            </ul>
-                        </div><!-- .cate-box end -->
+                            <h3 class="title"></h3>
+                            <!--<script type="text/javascript">-->
+                            <!--	atOptions = {-->
+                            <!--		'key' : '57da3d68c797ea04735e1f6cc1342e34',-->
+                            <!--		'format' : 'iframe',-->
+                            <!--		'height' : 50,-->
+                            <!--		'width' : 320,-->
+                            <!--		'params' : {}-->
+                            <!--	};-->
+                            <!--	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.hiprofitnetworks.com/57da3d68c797ea04735e1f6cc1342e34/invoke.js"></scr' + 'ipt>');-->
+                            <!--</script>-->
+                        </div>
+                        <div class="cate-box">
+                            <h3 class="title"></h3>
+                            <!--<script type="text/javascript">-->
+                            <!--	atOptions = {-->
+                            <!--		'key' : 'f99886bb207643e651af643ab1b89ff0',-->
+                            <!--		'format' : 'iframe',-->
+                            <!--		'height' : 50,-->
+                            <!--		'width' : 320,-->
+                            <!--		'params' : {}-->
+                            <!--	};-->
+                            <!--	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.hiprofitnetworks.com/f99886bb207643e651af643ab1b89ff0/invoke.js"></scr' + 'ipt>');-->
+                            <!--</script>-->
+                        </div>
                         <div class="tags-cloud clearfix">
-                            <h3 class="title">Product Tags</h3>
+                            <h3 class="title">Blog Tags</h3>
                             <ul>
-                                <li>
-                                    <a href="#">SCIENCE</a>
-                                </li>
-                                <li>
-                                    <a href="#">HUMANITIES</a>
-                                </li>
-                                <li>
-                                    <a href="#">DIPLOMA</a>
-                                </li>
-                                <li>
-                                    <a href="#">BUSINESS</a>
-                                </li>
-                                <li>
-                                    <a href="#">SPROTS</a>
-                                </li>
-                                <li>
-                                    <a href="#">RESEARCH</a>
-                                </li>
-                                <li>
-                                    <a href="#">ARTS</a>
-                                </li>
-                                <li>
-                                    <a href="#">ADMISSIONS</a>
-                                </li>
+                                {% for i in tags %}
+                                    <li><a href="#"> {{i}}</a></li>
+                                {% endfor %}
                             </ul>
                         </div><!-- .tags-cloud end -->
                         <div class="newsletter">
