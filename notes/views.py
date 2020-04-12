@@ -4,11 +4,20 @@ from django.shortcuts import get_object_or_404
 from. forms import NotesQueryForm
 
 
-def ClassNotesView(request, std):
-	objs = Note.objects.filter(note_class__iexact=std).order_by('chapter_no')
-	note_class = std
-	note_subject = "Science"
+available_subject_of_classes = {
+	'6': ['Science'],
+	'7': ['Science'],
+	'8': ['Science'],
+	'9': ['Science', 'Social Science', 'English'],
+	'10': ['Science', 'Social Science', 'English'],
+	'11': ['English', 'Biology', 'Chemistry', 'Physics', 'Pol Science', 'History'],
+	'12': ['English', 'Biology', 'Chemistry', 'Physics', 'Pol Science', 'History'],
+}
 
+
+def ClassNotesView(request, std, subject):
+	objs = Note.objects.filter(note_class__iexact=std, subject__iexact=subject).order_by('chapter_no')
+	
 	form = NotesQueryForm()
 
 	if request.method == 'POST':
@@ -18,7 +27,23 @@ def ClassNotesView(request, std):
 			return redirect('SubmitThankView')
 		else:
 			print("Form Invalid")
-	return render(request, 'notes/class_notes.html', {'notes': objs, 'note_class': note_class, 'form': form, 'note_subject': note_subject})
+	return render(request, 'notes/class_notes.html', {'notes': objs, 'note_class': std, 'form': form, 'note_subject': subject})
+
+
+def ClassNotesAllSubjectView(request, std):
+	note_class = std
+	available_subjects = available_subject_of_classes.get(note_class)
+	
+	form = NotesQueryForm()
+
+	if request.method == 'POST':
+		form = NotesQueryForm(request.POST)
+		if form.is_valid():
+			form.save(commit=True)
+			return redirect('SubmitThankView')
+		else:
+			print("Form Invalid")
+	return render(request, 'notes/available_subjects.html', {'note_class': note_class, 'form': form, 'available_subjects': available_subjects})
 
 
 def NotesDownloadView(request, pdfurl):

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+    {{block.super}}Class {{note_class}} Science Notes
+{% endblock title %}
+{% block block_navbar %}  
+    <ul class="nav-menu">
+        <li class="menu-item-has-children"> <a href="{% url 'IndexView' %}" class="home">Home</a></li>
+        <li class="menu-item-has-children"> <a href="#">About Us</a>
+            <ul class="sub-menu">
+                <li><a href="{% url 'AboutView' %}">About Us</a></li>
+                <li><a href="{% url 'TeachersView' %}">Teachers</a></li>
+                <li> <a href="{% url 'GalleryView' %}">Gallery</a> </li> 
+            </ul>
+        </li>
+        <li class="menu-item-has-children"> <a href="{% url 'CoursesView' %}">Courses</a></li>
+        <li class="menu-item-has-children current-menu-item current_page_item"> <a href="#">Notes</a></li>
+        <li class="menu-item-has-children"> <a href="{% url 'BlogView' %}">Blog</a></li>
+        <li class="menu-item-has-children"> <a href="{% url 'ContactView' %}">Contact</a></li>
+    </ul>
+{% endblock block_navbar %}
+{% block block_pagename %}
+    Notes
+{% endblock block_pagename %}
+{% block block_body %}
+    <div id="rs-courses-3" class="rs-courses-3 sec-spacer">
+        <div class="container">
+            <div class="abt-title">
+                <h2>AVAILABLE SUBJECTS FOR CLASS {{note_class}}</h2>
+            </div>
+            <p>CBSE Class {{note_class}} notes are prepared by Eduwizard Tutorials and their tutors which are really straight forward and easy to understand. All these notes of different subjects cover all the important topics in detials. These class {{note_class}} notes also include NCERT class {{note_class}} solutions, So that students do not need to look anywhere else for NCERT solution. Students can also download class {{note_class}} notes for free so that they can use it offline also.
+            <br>Class {{note_class}} notes provides the fundamentals and base of upcoming classes to the student of CBSE Class {{note_class}}, So it is much important to carefully read and understand these concepts so that they can perform better in upcoming classes also. Class {{note_class}} Notes provided by Eduwizard Tutorials is the key to clearly understand all these concepts easily. Here's a list of all the subjects and their note:
+            <div class="gridFilter">
+                <button class="active" data-filter="*">ALL</button>
+                <!--<button data-filter=".filter1">SCIENCE</button>
+                <button data-filter=".filter2">BUSINESS</button>
+                <button data-filter=".filter3">HUMANITIES</button>
+                <button data-filter=".filter4">DIPLOMA</button>-->
+            </div>
+            <div class="row grid">
+                {% for i in available_subjects %}
+                    <div class="col-lg-4 col-md-6 grid-item filter1">
+                        <div class="course-item">
+                            <div class="course-img">
+                                <img src="{% static "images/courses/" %}{{forloop.counter|add:3}}.jpg" alt="" />
+                                <div class="course-toolbar">
+                                    <h4 class="course-category"><a href="#">{{i}}</a></h4>
+                                    <div class="course-date">
+                                        <i class="fa fa-file-pdf-o"></i> PDF
+                                    </div>
+                                    <div class="course-duration">
+                                        <i class="fa fa-inr"></i> FREE
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <p style="text-align:left;">
+                                    {{i|upper}}
+                                    <span style="float:right;"><a href="{% url 'ClassNotesView' std=note_class subject=i%}">DOWNLOAD/VIEW</a></span>
+                                </p>
+                            </div>
+                        </div>                      
+                    </div>
+                {% endfor %}
+            </div>
+            {# <p></p> #}
+        </div>
+    </div>
+{% endblock block_body %}
