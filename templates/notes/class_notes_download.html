@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "notes_base.html" %}
 {% load staticfiles %}
 {% load widget_tweaks %}
 {% block block_head %}
@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="{% static "css/class_notes.css" %}">
 {% endblock block_head %}
 {% block title %}
-    {{block.super}}Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}} {{obj.chapter_name}} Solution and Notes
+    Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}} {{obj.chapter_name}} Solution and Notes
 {% endblock title %}
 {% block block_navbar %}
     <ul class="nav-menu">
@@ -44,7 +44,7 @@
                   </tr>
                 </thead>
             </table>
-            
+
             <p><b>CBSE Class {{obj.note_class}} {{obj.subject}} notes chapter {{obj.chapter_no}} {{obj.chapter_name}}</b> has been prepared by Eduwizard Tutorials and their tutors which is really straight forward and easy to understand. This <b>Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}}</b> notes can be helpful for all the students. Students can also download <b>{{obj.chapter_name}} class {{obj.note_class}} notes</b> for free so that they can use it offline also.
             <br><b>Class {{obj.note_class}} {{obj.subject}} notes</b> provides the fundamentals and base of upcoming classes to the student of <b>CBSE Class {{obj.note_class}}</b>, So it is much important to carefully read and understand these concepts so that they can perform better in upcoming classes also. <b>Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}} Notes</b> provided by Eduwizard Tutorials is the key to clearly understand all these concepts easily. Here we have embeded <b>Class {{obj.note_class}} Chapter {{obj.chapter_no}} {{obj.subject}} Notes</b> so that you can read it online or you can download it for offline use.</p>
             <iframe src="/media/{{pdfurl}}" width=100% height="1000px;"></iframe>

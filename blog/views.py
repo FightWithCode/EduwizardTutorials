@@ -36,4 +36,7 @@ def BlogDetailView(request, slug):
 	sugested = []
 	for i in no:
 		sugested.append(all_objs[i])
-	return render(request, "blogs/blog_detail.html", {'blog': obj, 'pre_obj': pre_obj, 'next_obj': next_obj, 'first_obj': first_obj, 'last_obj': last_obj, 'tags': tags, 'sugested': sugested})
+		title = obj.title
+		description = obj.description
+		keywords = obj.tags
+	return render(request, "blogs/blog_detail.html", {'blog': obj, 'pre_obj': pre_obj, 'next_obj': next_obj, 'first_obj': first_obj, 'last_obj': last_obj, 'tags': tags, 'sugested': sugested, 'title': title, 'description': description, 'keywords': keywords})
