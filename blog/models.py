@@ -12,6 +12,7 @@ class Blog(models.Model):
 	author = models.CharField(max_length=25)
 	tags = models.CharField(max_length=200)
 	public = models.BooleanField()
+	meta_description = models.CharField(max_length=200)
 
 	def __str__(self):
 		return self.title
