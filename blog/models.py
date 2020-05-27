@@ -17,9 +17,10 @@ class Blog(models.Model):
 		return self.title
 
 	def save(self, *args, **kwargs):
-		self.slug = self.title.replace(' ', '-')
-		for i in "?.":
-			self.slug = self.slug.replace(i, "").lower()
+		if self.slug == "":
+			self.slug = self.title.replace(' ', '-')
+			for i in "?.":
+				self.slug = self.slug.replace(i, "").lower()
 		super(Blog, self).save(*args, **kwargs)
 
 	def get_absolute_url(self):
