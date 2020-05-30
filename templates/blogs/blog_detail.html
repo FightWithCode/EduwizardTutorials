@@ -31,20 +31,15 @@
                     {{blog.content|safe}}
                     <div class="share-section">
                         <div class="row">
-                            <div class="col-lg-5 life-style">
+                            <div class="col-lg-12 life-style">
                                 <span class="author">
-                                    <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> {{blog.author}} </a>
+                                    <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i>Author: {{blog.author}} </a>
                                 </span>
-                                <span class="date">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i> {{blog.date}}
+                                <span class="date share-link1">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>Date: {{blog.date}}
                                 </span>
                             </div>
-                            <div class="col-lg-7">
-                                <ul class="share-link1">
-                                    <li><a href="#"> Tags:</a></li>
-
-                                </ul>
-                            </div>
+                        
                         </div>
                     </div>
 
@@ -55,9 +50,9 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <ul class="share-link">
-                                    <li><a href="#"> <i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-                                    <li><a href="#"><i class="fa fa-google" aria-hidden="true"></i> Google</a></li>
+                                    <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}"> <i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                                    <li><a target="_blank" href="http://twitter.com/share/?url={{request.build_absolute_uri}}&text={{blog.title}}"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                                    
                                 </ul>
                             </div>
                         </div>

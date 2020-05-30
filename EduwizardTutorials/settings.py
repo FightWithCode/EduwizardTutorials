@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'notes',
     'blog',
     'widget_tweaks',
+    'django_social_share',
 )
 
 MIDDLEWARE = (
