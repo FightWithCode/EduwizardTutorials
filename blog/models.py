@@ -20,7 +20,7 @@ class Blog(models.Model):
 	def save(self, *args, **kwargs):
 		if self.slug == "test":
 			self.slug = self.title.replace(' ', '-')
-			for i in "?.":
+			for i in "?.|":
 				self.slug = self.slug.replace(i, "").lower()
 		super(Blog, self).save(*args, **kwargs)
 
