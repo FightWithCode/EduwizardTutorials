@@ -4,7 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    path('class/<str:std>/<str:subject>', views.ClassNotesView, name="ClassNotesView"),
+    path('class/<str:std>/<str:subject>/', views.ClassNotesView, name="ClassNotesView"),
     url(r'^class/(?P<std>[\w]+)/available_subjects/$', views.ClassNotesAllSubjectView, name="ClassNotesAllSubjectView"),
-    url(r'^download/(?P<slug>[\w/.-]+)/$', views.NotesDownloadView, name="NotesDownloadView"),
+    # url(r'^download/(?P<slug>[\w/.-]+)/$', views.NotesDownloadView, name="NotesDownloadView"),
+    path('download/<str:slug>/', views.NotesDownloadView, name='NotesDownloadView'),
 ]
