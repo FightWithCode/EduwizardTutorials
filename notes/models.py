@@ -12,6 +12,12 @@ class Note(models.Model):
     description = models.CharField(max_length=255, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     date = models.DateTimeField(auto_now_add=True)
+    slug = models.CharField(max_length=100)
+
+    def save(self, *args, **kwargs):
+        slug_to_be_saved = 'class' + '-' + self.note_class + '-' + self.subject + '-chapter-' + str(self.chapter_no) + '-' + self.chapter_name + '-' + 'notes'
+        self.slug = slug_to_be_saved.replace(' ', '-').lower()
+        super(Note, self).save(*args, **kwargs)
 
     def __str__(self):
     	return self.note_class + ' | ' + self.subject + ' | ' + self.chapter_name + ' | ' + self.language
