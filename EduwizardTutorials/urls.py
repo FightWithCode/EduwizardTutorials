@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from pages import views as PagesView
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import BlogSitemap
-from notes.sitemaps import NoteSitemap, NoteClassSitemap
+from notes.sitemaps import NoteSitemap
 from pages.sitemaps import PageSitemap
 from django.urls import path
 
@@ -14,7 +14,6 @@ sitemaps = {
     'blogs': BlogSitemap,
     'pages': PageSitemap,
     'notes': NoteSitemap,
-    'classes': NoteClassSitemap,
 }
 
 urlpatterns = [

@@ -23,7 +23,7 @@ class Note(models.Model):
     	return self.note_class + ' | ' + self.subject + ' | ' + self.chapter_name + ' | ' + self.language
 
     def get_absolute_url(self):
-        return reverse('NotesDownloadView', kwargs={'pdfurl': self.notes_document})
+        return reverse('NotesDownloadView', kwargs={'slug': self.slug})
 
 
 class Classes(models.Model):
@@ -33,5 +33,5 @@ class Classes(models.Model):
     def __str__(self):
         return self.standard
 
-    def get_absolute_url(self):
-        return reverse('ClassNotesView', kwargs={'std': self.standard})
+    # def get_absolute_url(self):
+    #     return reverse('ClassNotesView', kwargs={'std': self.standard, 'subject':self.})
