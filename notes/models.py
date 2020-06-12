@@ -28,10 +28,11 @@ class Note(models.Model):
 
 class Classes(models.Model):
     standard = models.CharField(max_length=10)
+    subject = models.CharField(max_length=25)
     date = models.TimeField(auto_now=True)
 
     def __str__(self):
-        return self.standard
+        return self.standard + ' | ' + self.subject
 
-    # def get_absolute_url(self):
-    #     return reverse('ClassNotesView', kwargs={'std': self.standard, 'subject':self.})
+    def get_absolute_url(self):
+        return reverse('ClassNotesView', kwargs={'std': self.standard, 'subject': self.subject})
