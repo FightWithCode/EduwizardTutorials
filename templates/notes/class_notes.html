@@ -39,7 +39,7 @@
                 <ol class="gradient-list row">
                     {% for i in notes %}
                         <div class="col-sm-6">
-                            <li class="ml-1"><a href="{% url 'NotesDownloadView' pdfurl=i.notes_document %}">{{i.note_class}} | {{i.subject}} | {{i.chapter_no}}. {{i.chapter_name}}</a></li>
+                            <li class="ml-1"><a href="{% url 'NotesDownloadView' pdfurl=i.notes_document|cut:".pdf" %}">{{i.note_class}} | {{i.subject}} | {{i.chapter_no}}. {{i.chapter_name}}</a></li>
                         </div>
                     {% endfor %}
                 </ol>
