@@ -4,6 +4,15 @@
 <html lang="en">
 {% block block_head %}
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169299092-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-169299092-1');
+        </script>
         <meta charset="utf-8">
         <title>{% block title %}{% endblock title %} | Eduwizard Tutorials</title>
         <meta name="description" content="CBSE Class {{obj.note_class}} {{obj.subject}} notes chapter {{obj.chapter_no}} {{obj.chapter_name}} has been prepared by Eduwizard Tutorials and their tutors. This Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}} notes can be helpful for all the students. Students can also download {{obj.chapter_name}} class {{obj.note_class}} notes. Class {{obj.note_class}} {{obj.subject}} notes. CBSE Class {{obj.note_class}} solution.">
