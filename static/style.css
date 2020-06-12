@@ -2795,7 +2795,7 @@ ul {
   float: left;
   list-style: none;
 }
-.sidebar-area .tags-cloud ul li a {
+.sidebar-area .tags-cloud ul li h1 {
   border: 1px solid #d7d7d7;
   padding: 5px 13px;
   margin: 0 6px 6px 0;
@@ -2807,24 +2807,7 @@ ul {
   letter-spacing: 2px;
   line-height: 28px;
 }
-.sidebar-area .tags-cloud ul li a:hover {
-  background-color: #ff3115;
-  border-color: #ff3115;
-  color: #ffffff;
-}
-.blog-tags {
-  border: 1px solid #d7d7d7;
-  padding: 5px 13px;
-  margin: 0 6px 6px 0;
-  display: block;
-  color: #505050;
-  font-weight: 600;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 28px; 
-}
-.blog-tags:hover{
+.sidebar-area .tags-cloud ul li h1:hover {
   background-color: #ff3115;
   border-color: #ff3115;
   color: #ffffff;
