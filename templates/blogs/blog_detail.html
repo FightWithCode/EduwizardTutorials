@@ -101,8 +101,14 @@
                         <div class="tags-cloud clearfix">
                             <h3 class="title">Read in Other Language</h3>
                             <ul>
-                                <a href="{% url 'BlogDetailView' slug=blog.english_slug %}"><li><h1 class="blog-tags"> English</h1></li></a>
-                                <a href="{% url 'BlogDetailView' slug=blog.hindi_slug %}"><li><h1 class="blog-tags"> Hindi</h1></li></a>
+                                {% if blog.is_available_in_hindi %}
+                                    {% for i in same_contents_in_diff_language %}
+                                        <a href="{% url 'BlogDetailView' slug=i.slug %}"><li><h1 class="blog-tags">{{i.language}}</h1></li></a>
+                                    {% endfor %}
+                                {% else %}
+                                    <a href="{% url 'BlogDetailView' slug=blog.slug %}"><li><h1 class="blog-tags">{{blog.language}}</h1></li></a>
+                                {% endif %}
+
                             </ul>
                         </div>
                         <hr>

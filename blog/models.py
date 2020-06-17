@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+import random, string
 
 
 class Blog(models.Model):
@@ -13,9 +14,9 @@ class Blog(models.Model):
 	tags = models.CharField(max_length=200)
 	public = models.BooleanField()
 	meta_description = models.CharField(max_length=200)
-	language = models.CharField(max_length=20)
-	hindi_slug = models.CharField(max_length=120)
-	english_slug = models.CharField(max_length=120)
+	language = models.CharField(max_length=10, default="English")
+	is_available_in_hindi = models.BooleanField(default=False)
+	post_hash = models.CharField(max_length=10, default=0)
 
 	def __str__(self):
 		return self.title
@@ -25,8 +26,8 @@ class Blog(models.Model):
 			self.slug = self.title.replace(' ', '-')
 			for i in "?.|":
 				self.slug = self.slug.replace(i, "").lower()
-			self.english_slug = self.slug
-			self.hindi_slug = self.slug
+		if self.post_hash == "test":
+			self.post_hash = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(10))
 		super(Blog, self).save(*args, **kwargs)
 
 	def get_absolute_url(self):

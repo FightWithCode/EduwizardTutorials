@@ -42,4 +42,8 @@ def BlogDetailView(request, slug):
 		else:
 			description = obj.meta_description
 		keywords = obj.tags
-	return render(request, "blogs/blog_detail.html", {'blog': obj, 'pre_obj': pre_obj, 'next_obj': next_obj, 'first_obj': first_obj, 'last_obj': last_obj, 'tags': tags, 'sugested': sugested, 'title': title, 'description': description, 'keywords': keywords})
+	if obj.is_available_in_hindi:
+		same_contents_in_diff_language = Blog.objects.filter(post_hash__iexact=obj.post_hash)
+	else:
+		same_contents_in_diff_language = None
+	return render(request, "blogs/blog_detail.html", {'blog': obj, 'pre_obj': pre_obj, 'next_obj': next_obj, 'first_obj': first_obj, 'last_obj': last_obj, 'tags': tags, 'sugested': sugested, 'title': title, 'description': description, 'keywords': keywords, 'same_contents_in_diff_language': same_contents_in_diff_language})
