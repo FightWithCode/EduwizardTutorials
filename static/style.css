@@ -2683,7 +2683,7 @@ ul {
   font-weight: 700;
   text-transform: uppercase;
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 .sidebar-area .search-box {
   margin-bottom: 45px;
@@ -2785,7 +2785,7 @@ ul {
   opacity: 0.7;
 }
 .sidebar-area .tags-cloud {
-  margin-bottom: 39px;
+  margin-bottom: -5px;
 }
 .sidebar-area .tags-cloud ul {
   padding: 0;

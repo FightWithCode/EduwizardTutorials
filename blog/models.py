@@ -13,6 +13,9 @@ class Blog(models.Model):
 	tags = models.CharField(max_length=200)
 	public = models.BooleanField()
 	meta_description = models.CharField(max_length=200)
+	language = models.CharField(max_length=20)
+	hindi_slug = models.CharField(max_length=120)
+	english_slug = models.CharField(max_length=120)
 
 	def __str__(self):
 		return self.title
@@ -22,6 +25,8 @@ class Blog(models.Model):
 			self.slug = self.title.replace(' ', '-')
 			for i in "?.|":
 				self.slug = self.slug.replace(i, "").lower()
+			self.english_slug = self.slug
+			self.hindi_slug = self.slug
 		super(Blog, self).save(*args, **kwargs)
 
 	def get_absolute_url(self):

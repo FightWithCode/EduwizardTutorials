@@ -23,7 +23,7 @@
     <div class="single-blog-details sec-spacer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-12">
+                <div class="col-lg-8 col-md-12" style="text-align:justify;text-justify:auto">
                     <center><h1>{{blog.title}}</h1></center>
                     <div class="single-image">
                         <center><img src="{% static 'images/blogpage/'|add:blog.front_image %}" alt="single"></center>
@@ -98,19 +98,25 @@
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="sidebar-area">
-                        <div class="cate-box">
-                            <h3 class="title"></h3>
-                            <div id="336328626">
-                                <script type="text/javascript">
-                                    try {
-                                        window._mNHandle.queue.push(function (){
-                                            window._mNDetails.loadTag("336328626", "300x250", "336328626");
-                                        });
-                                    }
-                                    catch (error) {}
-                                </script>
-                            </div>
+                        <div class="tags-cloud clearfix">
+                            <h3 class="title">Read in Other Language</h3>
+                            <ul>
+                                <a href="{% url 'BlogDetailView' slug=blog.english_slug %}"><li><h1 class="blog-tags"> English</h1></li></a>
+                                <a href="{% url 'BlogDetailView' slug=blog.hindi_slug %}"><li><h1 class="blog-tags"> Hindi</h1></li></a>
+                            </ul>
                         </div>
+                        <hr>
+                        <div id="336328626">
+                            <script type="text/javascript">
+                                try {
+                                    window._mNHandle.queue.push(function (){
+                                        window._mNDetails.loadTag("336328626", "300x250", "336328626");
+                                    });
+                                }
+                                catch (error) {}
+                            </script>
+                        </div>
+                        <hr>
                         <div class="tags-cloud clearfix">
                             <h3 class="title">Blog Tags</h3>
                             <ul>
@@ -118,7 +124,8 @@
                                     <li><h1 class="blog-tags"> {{i}}</h1></li>
                                 {% endfor %}
                             </ul>
-                        </div><!-- .tags-cloud end -->
+                        </div>
+                        <hr>
                         <div class="newsletter">
                             <h4>Newsletter</h4>
                             <p>Sign up for our Newsletter !</p>
@@ -126,8 +133,8 @@
                                 <input class="form-control" placeholder="support@ewt.com" name="newsletter-term" id="newsletter-term" type="text">
                                 <button class="btn btn-default" type="submit"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                             </div>
-                        </div><!-- .newsletter end -->
-                    </div><!-- .sidebar-area end -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

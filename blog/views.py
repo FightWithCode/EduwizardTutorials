@@ -40,6 +40,6 @@ def BlogDetailView(request, slug):
 		if obj.meta_description == "":
 			description = obj.description
 		else:
-			description = obj.meta_description	
+			description = obj.meta_description
 		keywords = obj.tags
 	return render(request, "blogs/blog_detail.html", {'blog': obj, 'pre_obj': pre_obj, 'next_obj': next_obj, 'first_obj': first_obj, 'last_obj': last_obj, 'tags': tags, 'sugested': sugested, 'title': title, 'description': description, 'keywords': keywords})
