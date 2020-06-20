@@ -85,7 +85,7 @@
                             {% for i in sugested %}
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="popular-post-img">
-                                        <a href="{% url 'BlogDetailView' slug=i.slug %}"><img src="{% static 'images/blogpage/'|add:i.front_image %}" alt="Blog single photo"></a>
+                                        <a href="{% url 'BlogDetailView' slug=i.slug %}"><img src="{% static 'images/blogpage/'|add:i.front_image_233 %}" alt="Blog single photo"></a>
                                     </div>
                                     <h5>
                                         <a href="{% url 'BlogDetailView' slug=i.slug %}">{{i.title}}</a>
