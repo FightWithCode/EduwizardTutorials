@@ -34,6 +34,10 @@ def AboutView(request):
 	return render(request, 'about.html', {})
 
 
+def PrivacyView(request):
+	return render(request, 'privacy.html', {})
+
+
 def TeachersView(request):
 	return render(request, 'teachers.html', {})
 

@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^sw.js', PagesView.sw_js),
     url(r'^$', PagesView.IndexView, name="IndexView"),
     url(r'^about/$', PagesView.AboutView, name="AboutView"),
+    url(r'^privacy-policy/$', PagesView.PrivacyView, name="PrivacyView"),
     url(r'^teachers/$', PagesView.TeachersView, name="TeachersView"),
     url(r'^gallery/$', PagesView.GalleryView, name="GalleryView"),
     url(r'^courses/$', PagesView.CoursesView, name="CoursesView"),
