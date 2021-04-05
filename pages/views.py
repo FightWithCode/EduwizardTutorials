@@ -51,7 +51,7 @@ def NotesView(request):
 
 
 def BlogView(request):
-	obj = Blog.objects.filter(public=True).order_by('-id')[:10]
+	obj = Blog.objects.filter(public=True).order_by('-id')
 	return render(request, 'blog.html', {'blogs': obj})
 
 
