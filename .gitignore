@@ -2,11 +2,13 @@ topignoe/
 celerybeat-schedule
 someignoue/
 blog/migrations/
+EduwizardTutorials/migrations/
 notes/migrations/
 pages/migrations/
 blog/__pycache__/
 notes/__pycache__/
 pages/__pycache__/
+EduwizardTutorials/__pycache__/
 .env
 env/
 *.pyc
