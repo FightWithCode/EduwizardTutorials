@@ -64,13 +64,18 @@ def SubmitThankView(request):
 
 
 def sw_js(request):
-    print(settings.STATIC_ROOT)
-    print(os.path.join(settings.STATIC_ROOT, "rahul"))
     full_script_path = os.path.join(settings.STATIC_ROOT, "js/sw.js")
     print(full_script_path)
     with open(full_script_path, 'r') as f:
         javascript_contents = f.read()
     return HttpResponse(javascript_contents, content_type="text/javascript")
+
+
+def AdsTxtView(request):
+    full_script_path = os.path.join(settings.STATIC_ROOT, "js/ads.txt")
+    with open(full_script_path, 'r') as f:
+        javascript_contents = f.read()
+    return HttpResponse(javascript_contents, content_type="text")
 
 
 def NewsLetterView(request):

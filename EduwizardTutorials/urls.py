@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^MasterAdminOfEWT/', admin.site.urls),
     url(r'^sw.js', PagesView.sw_js),
+    url(r'^ads.txt', PagesView.AdsTxtView),
     url(r'^$', PagesView.IndexView, name="IndexView"),
     url(r'^about/$', PagesView.AboutView, name="AboutView"),
     url(r'^privacy-policy/$', PagesView.PrivacyView, name="PrivacyView"),
