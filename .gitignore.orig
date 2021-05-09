@@ -1,7 +1,14 @@
+<<<<<<< HEAD
+server/
+server/
+server/
+||||||| merged common ancestors
+=======
 topignoe/
 topignoe/
 topignoe/
 topignoe/
+>>>>>>> b3df9760650a9961215cf3a91982713c672471dc
 celerybeat-schedule
 blog/migrations/
 EduwizardTutorials/migrations/
