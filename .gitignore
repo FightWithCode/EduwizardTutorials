@@ -1,3 +1,6 @@
+server/
+server/
+server/
 celerybeat-schedule
 blog/migrations/
 EduwizardTutorials/migrations/
@@ -8,9 +11,12 @@ notes/__pycache__/
 pages/__pycache__/
 EduwizardTutorials/__pycache__/
 .env
+server/server/
+server/
 env/
 *.pyc
-
+server/
+server/server/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
