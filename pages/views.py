@@ -6,6 +6,8 @@ from .models import NewsLetter
 import os
 from django.conf import settings
 from django.http import HttpResponse
+from notes.models import Note
+from notes.forms import NotesQueryForm
 
 
 def IndexView(request):
@@ -13,7 +15,7 @@ def IndexView(request):
 	first_obj = objs.first()
 	objs = objs[1:4]
 	print(objs)
-	print(first_obj)
+	print(first_obj.front_image_500)
 	return render(request, 'index.html', {'objs': objs, 'first_obj': first_obj})
 
 
@@ -85,3 +87,24 @@ def NewsLetterView(request):
 		return HttpResponse("<center>Thanks for Subscribing our New Letter<br><a href=\"https://www.eduwizardtutorials.com\">Home</a></center>")
 	else:
 		return HttpResponse("<center>Not a Valid Email<br><a href=\"https://www.eduwizardtutorials.com\">Home</a></center>")
+
+
+def SearchNotesView(request):
+	search_class = request.GET.get("class")
+	search_subject = request.GET.get("subject")
+	if search_class and search_subject:
+		objs = Note.objects.filter(note_class__iexact=search_class, subject__iexact=search_subject).order_by('chapter_no')
+	elif search_class and (search_subject is "" or search_subject is None):
+		objs = Note.objects.filter(note_class__iexact=search_class).order_by('chapter_no')
+	elif search_subject and (search_class is "" or search_class is None):
+		objs = Note.objects.filter(subject__iexact=search_subject).order_by('chapter_no')
+
+	form = NotesQueryForm()
+	if request.method == 'POST':
+		form = NotesQueryForm(request.POST)
+		if form.is_valid():
+			form.save(commit=True)
+			return redirect('SubmitThankView')
+		else:
+			print("Form Invalid")
+	return render(request, 'search_notes.html', {"objs": objs, 'form': form})

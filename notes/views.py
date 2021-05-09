@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Note
 from django.shortcuts import get_object_or_404
-from. forms import NotesQueryForm
+from .forms import NotesQueryForm
 
 
 available_subject_of_classes = {
@@ -17,7 +17,7 @@ available_subject_of_classes = {
 
 def ClassNotesView(request, std, subject):
 	objs = Note.objects.filter(note_class__iexact=std, subject__iexact=subject).order_by('chapter_no')
-	
+
 	form = NotesQueryForm()
 
 	if request.method == 'POST':
@@ -33,7 +33,7 @@ def ClassNotesView(request, std, subject):
 def ClassNotesAllSubjectView(request, std):
 	note_class = std
 	available_subjects = available_subject_of_classes.get(note_class)
-	
+
 	form = NotesQueryForm()
 
 	if request.method == 'POST':
@@ -51,3 +51,5 @@ def NotesDownloadView(request, slug):
 	notes_obj = Note.objects.filter(note_class__iexact=obj.note_class)[:5]
 	pdfurl = obj.notes_document
 	return render(request, 'notes/class_notes_download.html', {'pdfurl': pdfurl, 'obj': obj, 'notes_obj': notes_obj})
+
+

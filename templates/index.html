@@ -181,30 +181,30 @@
                 <form class="row search-form">
                     <div class="col-md-4">
                     	<div class="categories">
-                    		<select>
-                    			<option>Science</option>
-                    			<option>Maths</option>
-                    			<option>S.Sc</option>
-                    			<option>English</option>
+                    		<select id="SearchSubject">
+                    			<option value="science">Science</option>
+                    			<option value="maths">Maths</option>
+                    			<option value="ssc">S.Sc</option>
+                    			<option value="english">English</option>
                     		</select>
                     	</div>
                     </div>
                     <div class="col-md-4">
                     	<div class="level">
-                    		<select>
-                    			<option>Class VI</option>
-                    			<option>Class VII</option>
-                    			<option>Class VIII</option>
-                    			<option>Class IX</option>
-                    			<option>Class X</option>
-                    			<option>Class XI</option>
-                    			<option>Class XII</option>
+                    		<select id="SearchClass">
+                    			<option value="6">Class VI</option>
+                    			<option value="7">Class VII</option>
+                    			<option value="8">Class VIII</option>
+                    			<option value="9">Class IX</option>
+                    			<option value="10">Class X</option>
+                    			<option value="11">Class XI</option>
+                    			<option value="12">Class XII</option>
                     		</select>
                     	</div>
                     </div>
                     <div class="col-md-4">
                     	<div class="search-btn">
-                    	    <button type="submit">Search Courses</button>
+                    	    <button type='button' onclick="callSeatch()">Search Notes</button>
                     	</div>
                     </div>
                 </form>
@@ -840,5 +840,13 @@
         <script src="{% static "js/rsmenu-main.js" %}"></script>
         <script src="{% static "js/plugins.js" %}"></script>
         <script src="{% static "js/main.js" %}"></script>
+        <script type="text/javascript">
+        	
+        	function callSeatch(){
+        		SearchSubject = $( "#SearchSubject" ).val();
+        		SearchClass = $( "#SearchClass" ).val();
+	            document.location.href=`{% url 'SearchNotesView' %}?class=${SearchClass}&subject=${SearchSubject}`
+	        };
+        </script>
     </body>
 </html>
