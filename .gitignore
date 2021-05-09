@@ -1,3 +1,14 @@
+celerybeat-schedule
+blog/migrations/
+notes/migrations/
+pages/migrations/
+blog/__pycache__/
+notes/__pycache__/
+pages/__pycache__/
+.env
+env/
+*.pyc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
