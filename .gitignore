@@ -1,7 +1,3 @@
-topignoe/
-topignoe/
-topignoe/
-topignoe/
 celerybeat-schedule
 blog/migrations/
 EduwizardTutorials/migrations/
@@ -12,19 +8,12 @@ notes/__pycache__/
 pages/__pycache__/
 EduwizardTutorials/__pycache__/
 .env
-<<<<<<< HEAD
-server/server/
-server/
-||||||| merged common ancestors
-=======
 topignoe/topignoe/
 topignoe/
 topignoe/
->>>>>>> b3df9760650a9961215cf3a91982713c672471dc
 env/
 *.pyc
-server/
-server/server/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
