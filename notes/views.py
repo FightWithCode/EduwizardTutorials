@@ -9,7 +9,7 @@ available_subject_of_classes = {
 	'7': ['Science'],
 	'8': ['Science'],
 	'9': ['Science', 'English', 'History', 'Geography', 'Political Science'],
-	'10': ['Science', 'English', 'History', 'Geography', 'Political Science'],
+	'10': ['Science', 'English', 'History', 'Geography', 'Political Science', 'Economics'],
 	'11': ['English', 'Biology', 'Chemistry', 'Physics', 'Pol Science', 'History'],
 	'12': ['English', 'Biology', 'Chemistry', 'Physics', 'Pol Science', 'History'],
 }
