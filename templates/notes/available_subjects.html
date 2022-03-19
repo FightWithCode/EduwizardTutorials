@@ -37,30 +37,66 @@
                 <button data-filter=".filter3">HUMANITIES</button>
                 <button data-filter=".filter4">DIPLOMA</button>-->
             </div>
+            
             <div class="row grid">
                 {% for i in available_subjects %}
-                    <div class="col-lg-4 col-md-6 grid-item filter1">
-                        <div class="course-item">
-                            <div class="course-img">
-                                <img src="{% static "images/courses/" %}{{forloop.counter|add:3}}.jpg" alt="" />
-                                <div class="course-toolbar">
-                                    <h4 class="course-category"><a href="#">{{i}}</a></h4>
-                                    <div class="course-date">
-                                        <i class="fa fa-file-pdf-o"></i> PDF
-                                    </div>
-                                    <div class="course-duration">
-                                        <i class="fa fa-inr"></i> FREE
+                    {% if i|slice:"-5:" == "Paper" %}
+                    {% else %}
+                        <div class="col-lg-4 col-md-6 grid-item filter1">
+                            <div class="course-item">
+                                <div class="course-img">
+                                    <img src="{% static "images/courses/" %}{{forloop.counter|add:3}}.jpg" alt="" />
+                                    <div class="course-toolbar">
+                                        <h4 class="course-category"><a href="#">{{i}}</a></h4>
+                                        <div class="course-date">
+                                            <i class="fa fa-file-pdf-o"></i> PDF
+                                        </div>
+                                        <div class="course-duration">
+                                            <i class="fa fa-inr"></i> FREE
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="course-footer">
-                                <p style="text-align:left;">
-                                    {{i|upper}}
-                                    <span style="float:right;"><a href="{% url 'ClassNotesView' std=note_class subject=i %}">DOWNLOAD/VIEW</a></span>
-                                </p>
-                            </div>
-                        </div>                      
-                    </div>
+                                <div class="course-footer">
+                                    <p style="text-align:left;">
+                                        {{i|upper}}
+                                        <span style="float:right;"><a href="{% url 'ClassNotesView' std=note_class subject=i %}">DOWNLOAD/VIEW</a></span>
+                                    </p>
+                                </div>
+                            </div>                      
+                        </div>
+                    {% endif %}
+                    
+                {% endfor %}
+            </div>
+            <div class="abt-title">
+                <h2>SAMPLE PAPERS {{note_class}}</h2>
+            </div>
+            <div class="row grid">
+                {% for i in available_subjects %}
+                    {% if i|slice:"-5:" == "Paper" %}
+                        <div class="col-lg-4 col-md-6 grid-item filter1">
+                            <div class="course-item">
+                                <div class="course-img">
+                                    <img src="{% static "images/courses/" %}{{forloop.counter|add:3}}.jpg" alt="" />
+                                    <div class="course-toolbar">
+                                        <h4 class="course-category"><a href="#">{{i}}</a></h4>
+                                        <div class="course-date">
+                                            <i class="fa fa-file-pdf-o"></i> PDF
+                                        </div>
+                                        <div class="course-duration">
+                                            <i class="fa fa-inr"></i> FREE
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <p style="text-align:left;">
+                                        {{i|upper}}
+                                        <span style="float:right;"><a href="{% url 'ClassNotesView' std=note_class subject=i %}">DOWNLOAD/VIEW</a></span>
+                                    </p>
+                                </div>
+                            </div>                      
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </div>
             {# <p></p> #}
