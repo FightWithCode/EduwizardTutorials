@@ -11,7 +11,7 @@ available_subject_of_classes = {
 	'9': ['Science', 'English', 'History', 'Geography', 'Political Science'],
 	'10': ['Science', 'English', 'History', 'Geography', 'Political Science', 'Economics', 'Math Sample Papers'],
 	'11': ['English', 'Biology', 'Chemistry', 'Physics', 'Pol Science', 'History', 'Computer Science'],
-	'12': ['English', 'Biology', 'Chemistry', 'Physics', 'Pol Science', 'History', 'Computer Science'],
+	'12': ['English', 'Biology', 'Chemistry', 'Physics', 'Pol Science', 'History', 'Computer Science', 'Math Sample Papers'],
 }
 
 
