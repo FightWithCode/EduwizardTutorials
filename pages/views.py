@@ -80,6 +80,13 @@ def AdsTxtView(request):
     return HttpResponse(javascript_contents, content_type="text")
 
 
+def RobotsView(request):
+    full_script_path = os.path.join(settings.STATIC_ROOT, "js/robots.txt")
+    with open(full_script_path, 'r') as f:
+        javascript_contents = f.read()
+    return HttpResponse(javascript_contents, content_type="text")
+
+
 def NewsLetterView(request):
 	email = request.POST.get('email')
 	if ('@' and '.') in email:
