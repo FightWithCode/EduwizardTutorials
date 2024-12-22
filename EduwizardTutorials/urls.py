@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^thankyou/$', PagesView.SubmitThankView, name="SubmitThankView"),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     url(r'^search-notes/$', PagesView.SearchNotesView, name="SearchNotesView"),
+    path('ads.txt', PagesView.ads_txt, name='ads_txt'),
 ]
 
 

@@ -115,3 +115,15 @@ def SearchNotesView(request):
 		else:
 			print("Form Invalid")
 	return render(request, 'search_notes.html', {"objs": objs, 'form': form})
+
+
+from django.http import HttpResponse
+from django.views.decorators.cache import cache_control
+
+@cache_control(public=True, max_age=86400)  # Cache the file for 1 day
+def ads_txt(request):
+    content = """
+    # Add your ads.txt content here
+    example.com, 12345, DIRECT
+    """
+    return HttpResponse(content, content_type="text/plain")
