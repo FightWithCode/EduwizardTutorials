@@ -50,6 +50,8 @@ def NotesDownloadView(request, slug):
 	obj = get_object_or_404(Note, slug__iexact=slug)
 	notes_obj = Note.objects.filter(note_class__iexact=obj.note_class)[:5]
 	pdfurl = obj.notes_document
+	if obj.is_paid:
+		pdfurl = obj.preview_document
 	return render(request, 'notes/class_notes_download.html', {'pdfurl': pdfurl, 'obj': obj, 'notes_obj': notes_obj})
 
 

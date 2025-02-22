@@ -10,6 +10,11 @@ class Note(models.Model):
     notes_document = models.FileField(upload_to='documents/')
     language = models.CharField(max_length=25)
     description = models.CharField(max_length=255, blank=True)
+    is_paid = models.BooleanField(default=False)
+    preview_document = models.FileField(upload_to='documents/', default=None)
+    price = models.IntegerField(default=0)
+    discount_price = models.IntegerField(default=0)
+    discount_percentage = models.IntegerField(default=0)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     date = models.DateTimeField(auto_now_add=True)
     slug = models.CharField(max_length=100)
@@ -20,8 +25,8 @@ class Note(models.Model):
         super(Note, self).save(*args, **kwargs)
 
     def __str__(self):
-    	return self.note_class + ' | ' + self.subject + ' | ' + self.chapter_name + ' | ' + self.language
-
+        return self.note_class + ' | ' + self.subject + ' | ' + self.chapter_name + ' | ' + self.language
+    
     def get_absolute_url(self):
         return reverse('NotesDownloadView', kwargs={'slug': self.slug})
 

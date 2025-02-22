@@ -4,6 +4,83 @@
 {% block block_head %}
 {{block.super}}
 <link rel="stylesheet" type="text/css" href="{% static "css/class_notes.css" %}">
+<style>
+    .premium-note-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.premium-note-card {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.premium-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.premium-description {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.premium-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 16px;
+}
+
+.discounted-price {
+    color: #e63946;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.discount-badge {
+    background: #ffcc00;
+    color: #000;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.premium-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ff3115;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.premium-button:hover {
+    background: white;
+}
+
+</style>
 {% endblock block_head %}
 {% block title %}
     CBSE Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}} {{obj.chapter_name}} Solution and Notes
@@ -48,7 +125,22 @@
             <p><b>CBSE Class {{obj.note_class}} {{obj.subject}} notes chapter {{obj.chapter_no}} {{obj.chapter_name}}</b> has been prepared by Eduwizard Tutorials and their tutors which is really straight forward and easy to understand. This <b>Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}}</b> notes can be helpful for all the students. Students can also download <b>chapter {{obj.chapter_no}} {{obj.chapter_name}} class {{obj.note_class}} notes</b> for free so that they can use it offline also.
             <br><b>Class {{obj.note_class}} {{obj.subject}} notes</b> provides the fundamentals and base of upcoming classes to the student of <b>CBSE Class {{obj.note_class}}</b>, So it is much important to carefully read and understand these concepts so that they can perform better in upcoming classes also. <b>Class {{obj.note_class}} {{obj.subject}} Chapter {{obj.chapter_no}} Notes</b> provided by Eduwizard Tutorials is the key to clearly understand all these concepts easily. Here we have embeded <b>Class {{obj.note_class}} Chapter {{obj.chapter_no}} {{obj.subject}} Notes</b> so that you can read it online or you can download it for offline use.</p>
             <iframe src="/media/{{pdfurl}}" width=100% height="1000px;"></iframe>
-
+            {% if obj.is_paid %}
+                <div class="premium-note-container">
+                    <div class="premium-note-card">
+                        <h3 class="premium-title">Unlock Full Access</h3>
+                        <p class="premium-description">
+                            You've reached the free preview! To access the full <strong>CBSE Class {{ obj.note_class }} {{ obj.subject }} Chapter {{ obj.chapter_no }} Notes</strong>, purchase now.
+                        </p>
+                        <p class="premium-price">
+                            <span class="original-price">₹{{obj.price}}</span>
+                            <span class="discounted-price">₹{{obj.discount_price}}</span>
+                            <span class="discount-badge">{{obj.discount_percentage}}% OFF</span>
+                        </p>
+                        <a href="#" class="premium-button">Get Full Access</a>
+                    </div>
+                </div>
+            {% endif %}
             <div class="abt-title">
                 </br>
                 <h2>OTHER AVAILABLE CBSE Class {{obj.note_class}} {{obj.subject}} Notes and Solution</h2>
