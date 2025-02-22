@@ -9,6 +9,7 @@ class Blog(models.Model):
 	front_image = models.CharField(max_length=100)
 	front_image_233 = models.CharField(max_length=100)
 	front_image_500 = models.CharField(max_length=100)
+	front_image_file = models.ImageField(upload_to='blog_images/')
 	slug = models.CharField(max_length=120, default="test")
 	description = models.CharField(max_length=500)
 	content = models.TextField()

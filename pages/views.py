@@ -14,8 +14,6 @@ def IndexView(request):
 	objs = Blog.objects.filter(public=True).order_by('-id')[:4]
 	first_obj = objs.first()
 	objs = objs[1:4]
-	print(objs)
-	print(first_obj.front_image_500)
 	return render(request, 'index.html', {'objs': objs, 'first_obj': first_obj})
 
 

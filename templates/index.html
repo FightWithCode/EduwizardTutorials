@@ -612,7 +612,7 @@
 						<div class="news-normal-block">
 		                    <div class="news-img">
 		                    	<a href="#">
-		                        	<img src="{% static 'images/blogpage/'|add:first_obj.front_image_500 %}" alt="" />
+		                        	<img src="{{first_obj.front_image_file.url}}" alt="" />
 		                    	</a>
 		                    </div>
 	                    	<div class="news-date">
@@ -636,7 +636,7 @@
 				        		<div class="news-list-item">
 				                    <div class="news-img">
 				                    	<a href="{% url 'BlogDetailView' slug=i.slug %}">
-				                        	<img src="{% static 'images/blogpage/'|add:i.front_image_233 %}" alt="" />
+				                        	<img src="{{first_obj.front_image_file.url}}" alt="" />
 				                    	</a>
 				                    </div>
 									<div class="news-content">
