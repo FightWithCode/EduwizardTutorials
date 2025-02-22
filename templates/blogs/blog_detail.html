@@ -26,7 +26,7 @@
                 <div class="col-lg-8 col-md-12" style="text-align:justify;text-justify:auto">
                     <center><h1>{{blog.title}}</h1></center>
                     <div class="single-image">
-                        <center><img src="{% static 'images/blogpage/'|add:blog.front_image %}" alt="single"></center>
+                        <center><img src="{{ blog.front_image_file.url }}" alt="single"></center>
                     </div>
                     {{blog.content|safe}}
                     <div class="share-section">
@@ -85,7 +85,7 @@
                             {% for i in sugested %}
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="popular-post-img">
-                                        <a href="{% url 'BlogDetailView' slug=i.slug %}"><img src="{% static 'images/blogpage/'|add:i.front_image_233 %}" alt="Blog single photo"></a>
+                                        <a href="{% url 'BlogDetailView' slug=i.slug %}"><img src="{{i.front_image_file.url}}" alt="Blog single photo"></a>
                                     </div>
                                     <h5>
                                         <a href="{% url 'BlogDetailView' slug=i.slug %}">{{i.title}}</a>
